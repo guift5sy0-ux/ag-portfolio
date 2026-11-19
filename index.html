@@ -149,6 +149,8 @@ section.block{padding:96px 0}
 .plan ul{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:8px;font-size:15px}
 .plan .meta{font-size:14px;color:var(--muted);margin:0}
 .plan.best .meta{color:var(--ink)}
+.style-note{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;margin-bottom:28px;padding:18px 24px;border:3px dashed var(--ink);border-radius:16px;background:var(--white);font-size:16px}
+.style-note>b{font-family:var(--mono);font-size:14px;color:var(--blue)}
 .cpass{border:3px solid var(--ink);border-radius:18px;background:var(--pink);padding:28px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;box-shadow:6px 6px 0 var(--ink)}
 .cpass>div{flex:999 1 420px;min-width:0;display:flex;flex-direction:column;gap:6px}
 .cpass .display{font-size:30px;line-height:1.2}
@@ -398,6 +400,11 @@ footer span:last-child{color:#D6D8DE}
         <ul><li>스탠다드의 모든 것</li><li>모든 프로젝트 상세</li><li>소개 문구 다듬기</li><li>30초 요약 PDF 버전</li><li>수정 3회</li></ul>
       </article>
     </div>
+    <div class="style-note">
+      <b>스타일 선택</b>
+      <span>게임형 · 클래식형 · 미니멀형 중 고르기 <strong>무료</strong></span>
+      <span>원하는 분위기로 새로 디자인하는 <strong>자유 스타일</strong> <b>+35,000원</b> · 작업일 +3일</span>
+    </div>
     <div class="cpass">
       <div>
         <span class="mono" style="font-size:13px">CONTINUE PASS</span>
@@ -459,6 +466,15 @@ footer span:last-child{color:#D6D8DE}
             <label class="chip"><input type="radio" name="상품" value="스탠다드" checked><span>스탠다드 (추천)</span></label>
             <label class="chip"><input type="radio" name="상품" value="프리미엄"><span>프리미엄</span></label>
             <label class="chip"><input type="radio" name="상품" value="컨티뉴 패스"><span>컨티뉴 패스</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>스타일</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="스타일" value="게임형" checked><span>게임형</span></label>
+            <label class="chip"><input type="radio" name="스타일" value="클래식형"><span>클래식형</span></label>
+            <label class="chip"><input type="radio" name="스타일" value="미니멀형"><span>미니멀형</span></label>
+            <label class="chip"><input type="radio" name="스타일" value="자유 스타일 (+35,000원)"><span>자유 스타일 +35,000원</span></label>
           </div>
         </fieldset>
         <fieldset>
