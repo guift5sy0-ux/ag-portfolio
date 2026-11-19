@@ -3,20 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>한도윤 · 주니어 프론트엔드 개발자 | AG 샘플 포트폴리오</title>
+<title>한도윤 · 주니어 프론트엔드 개발자 포트폴리오</title>
+<meta name="description" content="사용자 피드백을 빠르게 화면에 반영하는 개발자. 팀 프로젝트 3건에서 프론트엔드를 맡았습니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;700&family=Space+Mono:wght@400;700&family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#141414;--hero:#FFD23F;--accent:#3D5AFE;--accent-text:#FFFFFF;--soft:#EEF0FF;--muted:#3A3F4A}
 *{box-sizing:border-box}
-body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'IBM Plex Sans KR',system-ui,sans-serif;font-size:16px;line-height:1.6}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'IBM Plex Sans KR',system-ui,-apple-system,'Malgun Gothic',sans-serif;font-size:16px;line-height:1.6}
+a{color:inherit}
 .mono{font-family:'Space Mono',monospace;font-weight:700}
-.display{font-family:'Do Hyeon',sans-serif;font-weight:400}
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-.notice{background:var(--ink);color:#FFFFFF;font-size:13px;text-align:center;padding:8px 16px}
-.notice b{color:var(--hero)}
 .hero{background:var(--hero);border-bottom:3px solid var(--ink)}
 .hero .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-top:48px;padding-bottom:48px}
 .who{display:flex;align-items:center;gap:20px;flex:999 1 480px;min-width:0}
@@ -27,9 +25,8 @@ body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'IBM Plex Sans KR'
 .toggle{display:inline-flex;padding:5px;gap:5px;border-radius:14px;border:3px solid var(--ink);background:#FFFFFF;box-shadow:4px 4px 0 var(--ink)}
 .toggle button{min-height:44px;padding:0 18px;border-radius:10px;border:2px solid transparent;background:transparent;color:var(--ink);font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
 .toggle button[aria-pressed="true"]{border-color:var(--ink);background:var(--accent);color:var(--accent-text);font-weight:700}
-.toggle button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.toggle button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 main.wrap{padding-top:56px;padding-bottom:72px}
-.panel-title{display:none;margin:0 0 20px;font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:30px}
 .card{border:3px solid var(--ink);border-radius:20px;background:#FFFFFF;padding:36px;box-shadow:10px 10px 0 var(--ink)}
 @media (max-width:560px){.card{padding:22px}}
 .play{display:flex;flex-wrap:wrap;gap:32px}
@@ -40,15 +37,17 @@ main.wrap{padding-top:56px;padding-bottom:72px}
 .stat-top{display:flex;justify-content:space-between;font-size:14px;font-weight:500}
 .bar{height:16px;border-radius:8px;border:2px solid var(--ink);background:#FFFFFF;overflow:hidden}
 .bar span{display:block;height:100%;background:var(--accent)}
+.stat-note{font-size:12px;color:var(--muted)}
 .badges{display:flex;flex-wrap:wrap;gap:8px}
 .badge{padding:8px 12px;border-radius:10px;border:2px solid var(--ink);font-size:14px;font-weight:700}
 .quest{border:2px solid var(--ink);border-radius:14px;background:var(--soft);padding:20px 22px;display:flex;flex-direction:column;gap:8px;box-shadow:4px 4px 0 var(--ink)}
 .quest-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center}
 .code{padding:1px 8px;border-radius:6px;background:var(--accent);color:var(--accent-text);font-family:'Space Mono',monospace;font-size:12px;font-weight:700}
 .meta{font-size:13px;color:var(--muted)}
-.quest h4{margin:0;font-size:19px}
+.quest h3{margin:0;font-size:19px}
 .quest p{margin:0;font-size:15px;color:var(--muted)}
 .quest .reward{font-size:14px;font-weight:700;color:var(--ink)}
+.quest img{display:block;width:100%;height:auto;border:2px solid var(--ink);border-radius:10px;margin-top:6px}
 .rec{display:flex;flex-direction:column;gap:28px}
 .rec-boxes{display:flex;flex-wrap:wrap;gap:16px}
 .rec-boxes div{flex:1 1 220px;min-width:0;border:2px solid var(--ink);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;font-size:15px}
@@ -56,73 +55,45 @@ main.wrap{padding-top:56px;padding-bottom:72px}
 .proj-row b{flex:0 0 240px}
 .proj-row span{flex:1 1 260px;min-width:0;color:var(--muted);font-size:15px}
 .contacts{display:flex;flex-wrap:wrap;gap:10px}
-.contacts span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--ink);font-weight:700}
-footer{border-top:3px solid var(--ink);padding:20px 24px;text-align:center;font-size:14px}
-footer a{color:var(--ink);font-weight:700}
+.contacts a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--ink);font-weight:700;text-decoration:none;background:#FFFFFF}
+.contacts a:first-child{background:var(--accent);color:var(--accent-text)}
+footer{border-top:3px solid var(--ink);padding:20px 24px;text-align:center;font-size:13px;color:var(--muted)}
+.notice{background:var(--ink);color:#FFFFFF;font-size:13px;text-align:center;padding:8px 16px}
+.case{margin-top:6px;border-top:2px dashed var(--ink);padding-top:10px}
+.case summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.case summary::-webkit-details-marker{display:none}
+.case summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border:2px solid var(--ink);border-radius:6px;background:#FFFFFF;font-family:'Space Mono',monospace}
+.case[open] summary::before{content:"-"}
+.case summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.case-body{display:flex;flex-direction:column;gap:16px;padding:8px 0 4px}
+.case-body h4{margin:0 0 4px;font-size:15px}
+.case-body p{margin:0;font-size:15px;color:var(--ink);line-height:1.7}
+.case-body ul{margin:0;padding-left:20px;font-size:15px;line-height:1.7}
+.case-imgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.case-imgs img{margin:0}
+.case-links{display:flex;flex-wrap:wrap;gap:8px}
+.case-links a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:2px solid var(--ink);border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;background:#FFFFFF}
+.proj-row .case{flex:1 1 100%}
 [hidden]{display:none!important}
-body.both .toggle{display:none}
-body.both .panel-title{display:block}
-body.both #rec{display:flex!important}
-body.both #rec-wrap{display:block!important}
+@media print{.toggle,footer,.notice{display:none}.case{display:none}.card{box-shadow:none}#play-wrap{display:none}#rec{display:flex!important}}
 </style>
 </head>
 <body>
-<div class="notice"><b>SAMPLE</b> · 가상의 인물로 만든 AG 포트폴리오 데모입니다</div>
-<header class="hero">
-  <div class="wrap">
-    <div class="who">
-      <span class="avatar" aria-hidden="true">한</span>
-      <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
-        <span class="lv mono">LV.1 PLAYER</span>
-        <h1>한도윤</h1>
-        <p>주니어 프론트엔드 개발자</p>
-      </div>
-    </div>
-    <div class="toggle" role="group" aria-label="보기 모드">
-      <button type="button" data-mode="play" aria-pressed="true">플레이 모드</button>
-      <button type="button" data-mode="rec" aria-pressed="false">30초 모드</button>
-    </div>
-  </div>
-</header>
-<main class="wrap">
-  <section id="play-wrap">
-    <h2 class="panel-title">플레이 모드 · 방문자용</h2>
-    <div id="play" class="card play">
-      <div class="left">
-        <div style="display:flex;flex-direction:column;gap:14px"><span class="label">STATS</span><div class="stat"><div class="stat-top"><span>React</span><span class="mono">70</span></div><div class="bar"><span style="width:70%"></span></div></div><div class="stat"><div class="stat-top"><span>TypeScript</span><span class="mono">55</span></div><div class="bar"><span style="width:55%"></span></div></div><div class="stat"><div class="stat-top"><span>UI 설계</span><span class="mono">60</span></div><div class="bar"><span style="width:60%"></span></div></div><div class="stat"><div class="stat-top"><span>협업</span><span class="mono">75</span></div><div class="bar"><span style="width:75%"></span></div></div></div>
-        <div style="display:flex;flex-direction:column;gap:10px"><span class="label">ACHIEVEMENTS</span><div class="badges"><span class="badge" style="background:#FFD23F">교내 해커톤 장려상</span><span class="badge" style="background:#FFE4F1">정보처리기사</span></div></div>
-      </div>
-      <div class="right"><span class="label">QUEST LOG</span><article class="quest"><div class="quest-top"><span class="code">QUEST 01</span><span class="meta">팀 4명 · 프론트엔드 담당</span></div><h4>캠퍼스 중고거래 웹앱</h4><p>학과 단위로 거래를 묶는 중고거래 서비스. 검색과 채팅 화면을 만들었습니다.</p><p class="reward">보상: 베타 사용자 피드백을 받아 화면 두 번 개편</p></article><article class="quest"><div class="quest-top"><span class="code">QUEST 02</span><span class="meta">개인 프로젝트</span></div><h4>스터디 출석 체크 도구</h4><p>스터디 모임의 출석과 벌금을 자동으로 계산하는 작은 웹 도구.</p><p class="reward">보상: 실제 스터디 모임에서 한 학기 사용</p></article><article class="quest"><div class="quest-top"><span class="code">QUEST 03</span><span class="meta">해커톤 · 팀 3명</span></div><h4>동네 가게 대기열 알림</h4><p>48시간 해커톤에서 만든 대기 순서 알림 서비스의 화면 전체를 맡았습니다.</p><p class="reward">보상: 교내 해커톤 장려상</p></article></div>
-    </div>
-  </section>
-  <section id="rec-wrap">
-    <h2 class="panel-title" style="margin-top:56px">30초 모드 · 채용담당자용</h2>
-    <div id="rec" class="card rec" hidden>
-      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px">
-        <span class="label">30-SECOND SUMMARY</span><span class="code">READ TIME 0:30</span>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <span style="font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.35">한도윤 · 주니어 프론트엔드 개발자</span>
-        <span style="font-size:18px;color:var(--muted)">사용자 피드백을 빠르게 화면에 반영하는 개발자. 팀 프로젝트 3건에서 프론트엔드를 맡았습니다.</span>
-      </div>
-      <div class="rec-boxes"><div style="background:#FFD23F"><b>핵심 역량</b><span>React, TypeScript, 반응형 UI 설계</span></div><div style="background:#EEF0FF"><b>일하는 방식</b><span>작게 만들고 자주 확인받기, 문서로 합의하기</span></div><div style="background:#FFE4F1"><b>자격·수상</b><span>정보처리기사, 교내 해커톤 장려상</span></div></div>
-      <div style="display:flex;flex-direction:column;gap:4px"><b>대표 프로젝트</b><div class="proj-row"><b>캠퍼스 중고거래 웹앱</b><span>베타 사용자 피드백을 받아 화면 두 번 개편</span></div><div class="proj-row"><b>스터디 출석 체크 도구</b><span>실제 스터디 모임에서 한 학기 사용</span></div><div class="proj-row"><b>동네 가게 대기열 알림</b><span>교내 해커톤 장려상</span></div></div>
-      <div class="contacts"><span style="background:var(--accent);color:var(--accent-text)">이력서 PDF (샘플)</span><span>작업물 링크 (샘플)</span><span>이메일 (샘플)</span></div>
-    </div>
-  </section>
-</main>
-<footer>Made by <a href="../">AG Portfolio Studio</a> · 이 페이지는 가상의 인물로 만든 샘플입니다</footer>
+<div class="notice">SAMPLE · 가상의 인물로 만든 AG 포트폴리오 데모입니다</div><header class="hero"><div class="wrap">
+<div class="who"><span class="avatar" aria-hidden="true">한</span>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><span class="lv mono">LV.1 PLAYER</span><h1>한도윤</h1><p>주니어 프론트엔드 개발자</p></div></div>
+<div class="toggle" role="group" aria-label="보기 모드"><button type="button" data-mode="play" aria-pressed="true">플레이 모드</button><button type="button" data-mode="rec" aria-pressed="false">30초 모드</button></div>
+</div></header>
+<main class="wrap"><section id="play-wrap" aria-label="플레이 모드"><div class="card play"><div class="left"><div style="display:flex;flex-direction:column;gap:14px"><span class="label">STATS</span><div class="stat"><div class="stat-top"><span>React</span><span class="mono">70</span></div><div class="bar" role="img" aria-label="React 70점"><span style="width:70%"></span></div></div><div class="stat"><div class="stat-top"><span>TypeScript</span><span class="mono">55</span></div><div class="bar" role="img" aria-label="TypeScript 55점"><span style="width:55%"></span></div></div><div class="stat"><div class="stat-top"><span>UI 설계</span><span class="mono">60</span></div><div class="bar" role="img" aria-label="UI 설계 60점"><span style="width:60%"></span></div></div><div class="stat"><div class="stat-top"><span>협업</span><span class="mono">75</span></div><div class="bar" role="img" aria-label="협업 75점"><span style="width:75%"></span></div></div><span class="stat-note">샘플용 예시 점수입니다. 실제 제작 시에는 의뢰인이 직접 매긴 점수를 씁니다</span></div><div style="display:flex;flex-direction:column;gap:10px"><span class="label">ACHIEVEMENTS</span><div class="badges"><span class="badge" style="background:#FFD23F">교내 해커톤 장려상</span><span class="badge" style="background:#FFE4F1">정보처리기사</span></div></div></div><div class="right"><span class="label">QUEST LOG</span><article class="quest"><div class="quest-top"><span class="code">QUEST 01</span><span class="meta">팀 4명 · 프론트엔드 담당 · 3개월</span></div><h3>캠퍼스 중고거래 웹앱</h3><p>학과 단위로 거래를 묶는 중고거래 서비스. 검색과 채팅 화면을 만들었습니다.</p><p class="reward">보상: 베타 사용자 피드백을 받아 화면 두 번 개편</p><details class="case"><summary>퀘스트 상세 보기</summary><div class="case-body"><div><h4>배경과 문제</h4><p>기존 중고거래 앱에서는 같은 학교 학생을 찾기 어렵고, 거래 장소를 정하는 대화가 길어진다는 불편이 있었습니다.</p></div><div><h4>내 역할</h4><p>팀원 4명 중 프론트엔드 전담. 검색, 상품 목록, 1:1 채팅 화면을 만들고 백엔드 담당과 API 형식을 맞췄습니다.</p></div><div><h4>과정과 결정</h4><ul><li>검색 결과가 늦게 뜨는 문제를 줄이려고 입력이 멈춘 뒤 0.3초 후에 요청하도록 바꿨습니다</li><li>채팅 화면은 처음엔 새로고침 방식이었지만, 대화가 끊긴다는 피드백을 받고 실시간 방식으로 바꿨습니다</li><li>학과 필터를 첫 화면 맨 위로 올려 같은 학과 매물을 먼저 보이게 했습니다</li></ul></div><div><h4>어려웠던 점</h4><p>실시간 채팅으로 바꾸면서 메시지가 두 번 보이는 문제가 생겼습니다. 메시지마다 고유 번호를 붙여 중복을 걸러 해결했습니다.</p></div><div><h4>결과</h4><p>베타 테스트 참가자 피드백을 바탕으로 화면을 두 차례 개편했습니다.</p></div><div><h4>배운 점</h4><p>기능을 다 만든 뒤가 아니라 중간중간 사용자에게 보여줘야 방향을 덜 잃는다는 것을 배웠습니다.</p></div></div></details></article><article class="quest"><div class="quest-top"><span class="code">QUEST 02</span><span class="meta">개인 프로젝트 · 1개월</span></div><h3>스터디 출석 체크 도구</h3><p>스터디 모임의 출석과 벌금을 자동으로 계산하는 작은 웹 도구.</p><p class="reward">보상: 실제 스터디 모임에서 한 학기 사용</p><details class="case"><summary>퀘스트 상세 보기</summary><div class="case-body"><div><h4>배경과 문제</h4><p>스터디장이 매주 엑셀로 출석과 벌금을 계산하느라 30분씩 쓰고 있었습니다.</p></div><div><h4>내 역할</h4><p>기획, 디자인, 개발을 혼자 맡았습니다.</p></div><div><h4>과정과 결정</h4><ul><li>스터디원 5명에게 가장 귀찮은 일을 물어보고 &#x27;벌금 계산&#x27; 하나에만 집중했습니다</li><li>로그인 없이 링크만으로 출석 체크가 되도록 단순하게 만들었습니다</li></ul></div><div><h4>어려웠던 점</h4><p>지각 기준이 모임마다 달라서, 기준 시간을 스터디장이 직접 정할 수 있게 설정 화면을 추가했습니다.</p></div><div><h4>결과</h4><p>우리 스터디에서 한 학기 동안 실제로 사용했습니다.</p></div><div><h4>배운 점</h4><p>작은 도구라도 실제로 쓰는 사람이 있으면 고칠 점이 계속 보인다는 것을 알았습니다.</p></div></div></details></article><article class="quest"><div class="quest-top"><span class="code">QUEST 03</span><span class="meta">해커톤 · 팀 3명 · 48시간</span></div><h3>동네 가게 대기열 알림</h3><p>48시간 해커톤에서 만든 대기 순서 알림 서비스의 화면 전체를 맡았습니다.</p><p class="reward">보상: 교내 해커톤 장려상</p><details class="case"><summary>퀘스트 상세 보기</summary><div class="case-body"><div><h4>배경과 문제</h4><p>인기 있는 동네 식당 앞에서 손님들이 추운 날씨에 줄을 서서 기다리는 모습에서 출발했습니다.</p></div><div><h4>내 역할</h4><p>손님용 대기 등록 화면과 가게용 관리 화면을 모두 만들었습니다.</p></div><div><h4>과정과 결정</h4><ul><li>48시간 안에 끝내기 위해 기능을 &#x27;등록, 순서 확인, 호출&#x27; 세 가지로 줄였습니다</li><li>가게 사장님이 바쁜 중에도 누를 수 있게 호출 버튼을 화면 절반 크기로 키웠습니다</li></ul></div><div><h4>어려웠던 점</h4><p>발표 직전에 휴대폰에서 화면이 깨지는 문제를 발견해, 가장 작은 화면부터 다시 맞췄습니다.</p></div><div><h4>결과</h4><p>교내 해커톤에서 장려상을 받았습니다.</p></div><div><h4>배운 점</h4><p>시간이 부족할수록 무엇을 빼야 하는지 먼저 정해야 한다는 것을 배웠습니다.</p></div></div></details></article></div></div></section><section id="rec" class="card rec" aria-label="30초 요약" hidden><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px"><span class="label">30-SECOND SUMMARY</span><span class="code">READ TIME 0:30</span></div><div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.35">한도윤 · 주니어 프론트엔드 개발자</span><span style="font-size:18px;color:var(--muted)">사용자 피드백을 빠르게 화면에 반영하는 개발자. 팀 프로젝트 3건에서 프론트엔드를 맡았습니다.</span></div><div class="rec-boxes"><div style="background:#FFD23F"><b>핵심 역량</b><span>React, TypeScript, 반응형 UI 설계</span></div><div style="background:#EEF0FF"><b>일하는 방식</b><span>작게 만들고 자주 확인받기, 문서로 합의하기</span></div><div style="background:#FFE4F1"><b>자격·수상</b><span>정보처리기사, 교내 해커톤 장려상</span></div></div><div style="display:flex;flex-direction:column;gap:4px"><b>대표 프로젝트</b><div class="proj-row"><b>캠퍼스 중고거래 웹앱</b><span>검색·채팅 화면 구현, 사용자 피드백으로 두 차례 개편</span></div><div class="proj-row"><b>스터디 출석 체크 도구</b><span>출석·벌금 자동 계산 도구, 한 학기 실사용</span></div><div class="proj-row"><b>동네 가게 대기열 알림</b><span>대기 알림 서비스 화면 전체 담당, 해커톤 장려상</span></div></div></section></main>
+<footer>Made with AG Portfolio Studio</footer>
 <script>
-if (location.hash === '#both') document.body.classList.add('both');
-var btns = document.querySelectorAll('.toggle button');
-btns.forEach(function (b) {
-  b.addEventListener('click', function () {
-    var rec = b.getAttribute('data-mode') === 'rec';
-    document.getElementById('play').hidden = rec;
-    document.getElementById('rec').hidden = !rec;
-    btns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-  });
-});
+var btns=document.querySelectorAll('.toggle button');
+btns.forEach(function(b){b.addEventListener('click',function(){
+  var rec=b.getAttribute('data-mode')==='rec';
+  document.getElementById('play-wrap').hidden=rec;
+  document.getElementById('rec').hidden=!rec;
+  btns.forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
+});});
 </script>
 </body>
 </html>

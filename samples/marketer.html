@@ -3,20 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>박서윤 · 신입 콘텐츠·퍼포먼스 마케터 | AG 샘플 포트폴리오</title>
+<title>박서윤 · 신입 콘텐츠·퍼포먼스 마케터 포트폴리오</title>
+<meta name="description" content="작게 실험하고 숫자로 확인하는 마케터. 계정 운영과 광고 실습으로 기획부터 성과 분석까지 해봤습니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;700&family=Space+Mono:wght@400;700&family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#141414;--hero:#FF9F5A;--accent:#141414;--accent-text:#FF9F5A;--soft:#FFF0E5;--muted:#3A3F4A}
 *{box-sizing:border-box}
-body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'IBM Plex Sans KR',system-ui,sans-serif;font-size:16px;line-height:1.6}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'IBM Plex Sans KR',system-ui,-apple-system,'Malgun Gothic',sans-serif;font-size:16px;line-height:1.6}
+a{color:inherit}
 .mono{font-family:'Space Mono',monospace;font-weight:700}
-.display{font-family:'Do Hyeon',sans-serif;font-weight:400}
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-.notice{background:var(--ink);color:#FFFFFF;font-size:13px;text-align:center;padding:8px 16px}
-.notice b{color:var(--hero)}
 .hero{background:var(--hero);border-bottom:3px solid var(--ink)}
 .hero .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-top:48px;padding-bottom:48px}
 .who{display:flex;align-items:center;gap:20px;flex:999 1 480px;min-width:0}
@@ -27,9 +25,8 @@ body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'IBM Plex Sans KR'
 .toggle{display:inline-flex;padding:5px;gap:5px;border-radius:14px;border:3px solid var(--ink);background:#FFFFFF;box-shadow:4px 4px 0 var(--ink)}
 .toggle button{min-height:44px;padding:0 18px;border-radius:10px;border:2px solid transparent;background:transparent;color:var(--ink);font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
 .toggle button[aria-pressed="true"]{border-color:var(--ink);background:var(--accent);color:var(--accent-text);font-weight:700}
-.toggle button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.toggle button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 main.wrap{padding-top:56px;padding-bottom:72px}
-.panel-title{display:none;margin:0 0 20px;font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:30px}
 .card{border:3px solid var(--ink);border-radius:20px;background:#FFFFFF;padding:36px;box-shadow:10px 10px 0 var(--ink)}
 @media (max-width:560px){.card{padding:22px}}
 .play{display:flex;flex-wrap:wrap;gap:32px}
@@ -40,15 +37,17 @@ main.wrap{padding-top:56px;padding-bottom:72px}
 .stat-top{display:flex;justify-content:space-between;font-size:14px;font-weight:500}
 .bar{height:16px;border-radius:8px;border:2px solid var(--ink);background:#FFFFFF;overflow:hidden}
 .bar span{display:block;height:100%;background:var(--accent)}
+.stat-note{font-size:12px;color:var(--muted)}
 .badges{display:flex;flex-wrap:wrap;gap:8px}
 .badge{padding:8px 12px;border-radius:10px;border:2px solid var(--ink);font-size:14px;font-weight:700}
 .quest{border:2px solid var(--ink);border-radius:14px;background:var(--soft);padding:20px 22px;display:flex;flex-direction:column;gap:8px;box-shadow:4px 4px 0 var(--ink)}
 .quest-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center}
 .code{padding:1px 8px;border-radius:6px;background:var(--accent);color:var(--accent-text);font-family:'Space Mono',monospace;font-size:12px;font-weight:700}
 .meta{font-size:13px;color:var(--muted)}
-.quest h4{margin:0;font-size:19px}
+.quest h3{margin:0;font-size:19px}
 .quest p{margin:0;font-size:15px;color:var(--muted)}
 .quest .reward{font-size:14px;font-weight:700;color:var(--ink)}
+.quest img{display:block;width:100%;height:auto;border:2px solid var(--ink);border-radius:10px;margin-top:6px}
 .rec{display:flex;flex-direction:column;gap:28px}
 .rec-boxes{display:flex;flex-wrap:wrap;gap:16px}
 .rec-boxes div{flex:1 1 220px;min-width:0;border:2px solid var(--ink);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;font-size:15px}
@@ -56,73 +55,65 @@ main.wrap{padding-top:56px;padding-bottom:72px}
 .proj-row b{flex:0 0 240px}
 .proj-row span{flex:1 1 260px;min-width:0;color:var(--muted);font-size:15px}
 .contacts{display:flex;flex-wrap:wrap;gap:10px}
-.contacts span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--ink);font-weight:700}
-footer{border-top:3px solid var(--ink);padding:20px 24px;text-align:center;font-size:14px}
-footer a{color:var(--ink);font-weight:700}
+.contacts a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--ink);font-weight:700;text-decoration:none;background:#FFFFFF}
+.contacts a:first-child{background:var(--accent);color:var(--accent-text)}
+footer{border-top:3px solid var(--ink);padding:20px 24px;text-align:center;font-size:13px;color:var(--muted)}
+.notice{background:var(--ink);color:#FFFFFF;font-size:13px;text-align:center;padding:8px 16px}
+.case{margin-top:6px;border-top:2px dashed var(--ink);padding-top:10px}
+.case summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.case summary::-webkit-details-marker{display:none}
+.case summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border:2px solid var(--ink);border-radius:6px;background:#FFFFFF;font-family:'Space Mono',monospace}
+.case[open] summary::before{content:"-"}
+.case summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.case-body{display:flex;flex-direction:column;gap:16px;padding:8px 0 4px}
+.case-body h4{margin:0 0 4px;font-size:15px}
+.case-body p{margin:0;font-size:15px;color:var(--ink);line-height:1.7}
+.case-body ul{margin:0;padding-left:20px;font-size:15px;line-height:1.7}
+.case-imgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.case-imgs img{margin:0}
+.case-links{display:flex;flex-wrap:wrap;gap:8px}
+.case-links a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:2px solid var(--ink);border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;background:#FFFFFF}
+.proj-row .case{flex:1 1 100%}
 [hidden]{display:none!important}
-body.both .toggle{display:none}
-body.both .panel-title{display:block}
-body.both #rec{display:flex!important}
-body.both #rec-wrap{display:block!important}
+@media print{.toggle,footer,.notice{display:none}.case{display:none}.card{box-shadow:none}#play-wrap{display:none}#rec{display:flex!important}}
+
+.hero{background:var(--soft);border-bottom:1px solid #D5D9E0}
+.avatar{border:1px solid #C9CED8;box-shadow:none;border-radius:50%;font-family:'IBM Plex Sans KR',sans-serif;font-weight:700;font-size:38px}
+.lv{display:none}
+.who h1{font-family:'IBM Plex Sans KR',sans-serif;font-weight:700;font-size:clamp(32px,5vw,44px)}
+.toggle{border:1px solid #C9CED8;box-shadow:none}
+.toggle button[aria-pressed="true"]{border-color:transparent}
+.card{border:1px solid #D5D9E0;box-shadow:0 2px 12px rgba(20,20,20,.06);border-radius:14px}
+.bar{height:10px;border:none;background:#E6E9EF}
+.badge{border:1px solid #C9CED8;background:#FFFFFF!important;font-weight:500}
+.quest{border:1px solid #D5D9E0;box-shadow:none;background:#FFFFFF}
+.code{background:var(--soft);color:var(--ink)}
+.quest img{border:1px solid #D5D9E0}
+.rec-boxes div{border:1px solid #D5D9E0;background:#FFFFFF!important}
+.proj-row{border-bottom:1px solid #D5D9E0}
+.contacts a{border:1px solid #C9CED8}
+footer{border-top:1px solid #D5D9E0}
+.case{border-top:1px solid #D5D9E0}
+.case summary::before{border:1px solid #C9CED8;font-family:'IBM Plex Sans KR',sans-serif}
+.case-links a{border:1px solid #C9CED8}
 </style>
 </head>
 <body>
-<div class="notice"><b>SAMPLE</b> · 가상의 인물로 만든 AG 포트폴리오 데모입니다</div>
-<header class="hero">
-  <div class="wrap">
-    <div class="who">
-      <span class="avatar" aria-hidden="true">박</span>
-      <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
-        <span class="lv mono">LV.1 PLAYER</span>
-        <h1>박서윤</h1>
-        <p>신입 콘텐츠·퍼포먼스 마케터</p>
-      </div>
-    </div>
-    <div class="toggle" role="group" aria-label="보기 모드">
-      <button type="button" data-mode="play" aria-pressed="true">플레이 모드</button>
-      <button type="button" data-mode="rec" aria-pressed="false">30초 모드</button>
-    </div>
-  </div>
-</header>
-<main class="wrap">
-  <section id="play-wrap">
-    <h2 class="panel-title">플레이 모드 · 방문자용</h2>
-    <div id="play" class="card play">
-      <div class="left">
-        <div style="display:flex;flex-direction:column;gap:14px"><span class="label">STATS</span><div class="stat"><div class="stat-top"><span>콘텐츠 기획</span><span class="mono">80</span></div><div class="bar"><span style="width:80%"></span></div></div><div class="stat"><div class="stat-top"><span>데이터 분석</span><span class="mono">65</span></div><div class="bar"><span style="width:65%"></span></div></div><div class="stat"><div class="stat-top"><span>광고 운영</span><span class="mono">55</span></div><div class="bar"><span style="width:55%"></span></div></div><div class="stat"><div class="stat-top"><span>커뮤니케이션</span><span class="mono">75</span></div><div class="bar"><span style="width:75%"></span></div></div></div>
-        <div style="display:flex;flex-direction:column;gap:10px"><span class="label">ACHIEVEMENTS</span><div class="badges"><span class="badge" style="background:#FF9F5A">마케팅 공모전 장려상</span><span class="badge" style="background:#FFE4F1">구글 애널리틱스 자격</span></div></div>
-      </div>
-      <div class="right"><span class="label">QUEST LOG</span><article class="quest"><div class="quest-top"><span class="code">QUEST 01</span><span class="meta">1년 · 기획과 운영 담당</span></div><h4>학과 인스타그램 계정 운영</h4><p>학과 행사와 졸업생 인터뷰를 주 3회 콘텐츠로 꾸준히 발행했습니다.</p><p class="reward">보상: 운영 1년 동안 팔로워 두 배 성장</p></article><article class="quest"><div class="quest-top"><span class="code">QUEST 02</span><span class="meta">창업 동아리 · 팀 4명</span></div><h4>카페 창업 SNS 광고 실습</h4><p>소액 예산으로 광고 문구와 이미지를 바꿔가며 반응을 비교했습니다.</p><p class="reward">보상: A/B 테스트 3회로 가장 반응 좋은 문구 찾기</p></article><article class="quest"><div class="quest-top"><span class="code">QUEST 03</span><span class="meta">공모전 · 팀 3명 · 기획</span></div><h4>지역 시장 살리기 캠페인</h4><p>대학생과 전통시장을 잇는 캠페인을 기획하고 발표했습니다.</p><p class="reward">보상: 마케팅 공모전 장려상</p></article></div>
-    </div>
-  </section>
-  <section id="rec-wrap">
-    <h2 class="panel-title" style="margin-top:56px">30초 모드 · 채용담당자용</h2>
-    <div id="rec" class="card rec" hidden>
-      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px">
-        <span class="label">30-SECOND SUMMARY</span><span class="code">READ TIME 0:30</span>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <span style="font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.35">박서윤 · 신입 콘텐츠·퍼포먼스 마케터</span>
-        <span style="font-size:18px;color:var(--muted)">작게 실험하고 숫자로 확인하는 마케터. 계정 운영과 광고 실습으로 기획부터 성과 분석까지 해봤습니다.</span>
-      </div>
-      <div class="rec-boxes"><div style="background:#FF9F5A"><b>핵심 역량</b><span>콘텐츠 기획, SNS 광고 세팅, 성과 분석</span></div><div style="background:#FFF0E5"><b>일하는 방식</b><span>가설을 세우고 작게 실험한 뒤 숫자로 판단</span></div><div style="background:#FFE4F1"><b>자격·수상</b><span>구글 애널리틱스 자격, 마케팅 공모전 장려상</span></div></div>
-      <div style="display:flex;flex-direction:column;gap:4px"><b>대표 프로젝트</b><div class="proj-row"><b>학과 인스타그램 계정 운영</b><span>운영 1년 동안 팔로워 두 배 성장</span></div><div class="proj-row"><b>카페 창업 SNS 광고 실습</b><span>A/B 테스트 3회로 가장 반응 좋은 문구 찾기</span></div><div class="proj-row"><b>지역 시장 살리기 캠페인</b><span>마케팅 공모전 장려상</span></div></div>
-      <div class="contacts"><span style="background:var(--accent);color:var(--accent-text)">이력서 PDF (샘플)</span><span>작업물 링크 (샘플)</span><span>이메일 (샘플)</span></div>
-    </div>
-  </section>
-</main>
-<footer>Made by <a href="../">AG Portfolio Studio</a> · 이 페이지는 가상의 인물로 만든 샘플입니다</footer>
+<div class="notice">SAMPLE · 가상의 인물로 만든 AG 포트폴리오 데모입니다</div><header class="hero"><div class="wrap">
+<div class="who"><span class="avatar" aria-hidden="true">박</span>
+<div style="display:flex;flex-direction:column;gap:6px;min-width:0"><span class="lv mono">LV.1 PLAYER</span><h1>박서윤</h1><p>신입 콘텐츠·퍼포먼스 마케터</p></div></div>
+<div class="toggle" role="group" aria-label="보기 모드"><button type="button" data-mode="play" aria-pressed="true">상세 보기</button><button type="button" data-mode="rec" aria-pressed="false">30초 요약</button></div>
+</div></header>
+<main class="wrap"><section id="play-wrap" aria-label="상세 보기"><div class="card play"><div class="left"><div style="display:flex;flex-direction:column;gap:14px"><span class="label">역량</span><div class="stat"><div class="stat-top"><span>콘텐츠 기획</span><span class="mono">80</span></div><div class="bar" role="img" aria-label="콘텐츠 기획 80점"><span style="width:80%"></span></div></div><div class="stat"><div class="stat-top"><span>데이터 분석</span><span class="mono">65</span></div><div class="bar" role="img" aria-label="데이터 분석 65점"><span style="width:65%"></span></div></div><div class="stat"><div class="stat-top"><span>광고 운영</span><span class="mono">55</span></div><div class="bar" role="img" aria-label="광고 운영 55점"><span style="width:55%"></span></div></div><div class="stat"><div class="stat-top"><span>커뮤니케이션</span><span class="mono">75</span></div><div class="bar" role="img" aria-label="커뮤니케이션 75점"><span style="width:75%"></span></div></div><span class="stat-note">샘플용 예시 점수입니다. 실제 제작 시에는 의뢰인이 직접 매긴 점수를 씁니다</span></div><div style="display:flex;flex-direction:column;gap:10px"><span class="label">자격·수상</span><div class="badges"><span class="badge" style="background:#FF9F5A">마케팅 공모전 장려상</span><span class="badge" style="background:#FFE4F1">구글 애널리틱스 자격</span></div></div></div><div class="right"><span class="label">프로젝트</span><article class="quest"><div class="quest-top"><span class="code">PROJECT 01</span><span class="meta">1년 · 기획과 운영 담당</span></div><h3>학과 인스타그램 계정 운영</h3><p>학과 행사와 졸업생 인터뷰를 주 3회 콘텐츠로 꾸준히 발행했습니다.</p><p class="reward">성과: 운영 1년 동안 팔로워 두 배 성장</p><details class="case"><summary>자세히 보기</summary><div class="case-body"><div><h4>배경과 문제</h4><p>학과 계정이 행사 공지만 올려서 재학생들이 거의 보지 않았습니다.</p></div><div><h4>내 역할</h4><p>콘텐츠 기획, 촬영 일정 조율, 게시물 제작, 반응 분석을 맡았습니다.</p></div><div><h4>과정과 결정</h4><ul><li>재학생 설문으로 &#x27;졸업생 진로 이야기&#x27;를 가장 보고 싶어 한다는 것을 확인했습니다</li><li>공지, 인터뷰, 학과 일상을 요일별로 나눠 주 3회 발행 일정을 만들었습니다</li><li>매달 저장 수가 많은 게시물 유형을 정리해 다음 달 기획에 반영했습니다</li></ul></div><div><h4>어려웠던 점</h4><p>시험 기간에는 발행이 끊겼습니다. 방학 동안 인터뷰를 미리 모아 두는 방식으로 해결했습니다.</p></div><div><h4>결과</h4><p>운영 1년 동안 팔로워가 두 배로 늘었습니다.</p></div><div><h4>배운 점</h4><p>꾸준함은 의지보다 미리 쌓아 둔 콘텐츠에서 나온다는 것을 배웠습니다.</p></div></div></details></article><article class="quest"><div class="quest-top"><span class="code">PROJECT 02</span><span class="meta">창업 동아리 · 팀 4명</span></div><h3>카페 창업 SNS 광고 실습</h3><p>소액 예산으로 광고 문구와 이미지를 바꿔가며 반응을 비교했습니다.</p><p class="reward">성과: A/B 테스트 3회로 가장 반응 좋은 문구 찾기</p><details class="case"><summary>자세히 보기</summary><div class="case-body"><div><h4>배경과 문제</h4><p>동아리에서 운영하는 팝업 카페를 알리기 위해 처음으로 유료 광고를 해봤습니다.</p></div><div><h4>내 역할</h4><p>광고 세팅과 결과 정리를 맡았습니다.</p></div><div><h4>과정과 결정</h4><ul><li>한 번에 하나만 바꾸는 원칙으로 문구, 이미지, 시간대를 차례로 비교했습니다</li><li>결과는 매번 표로 정리해 팀원들과 공유했습니다</li></ul></div><div><h4>어려웠던 점</h4><p>예산이 작아 차이가 우연인지 헷갈렸습니다. 같은 비교를 두 번 반복해 확인했습니다.</p></div><div><h4>결과</h4><p>세 차례 비교로 가장 반응이 좋은 문구를 찾았습니다.</p></div><div><h4>배운 점</h4><p>적은 돈으로도 순서를 지켜 실험하면 배울 것이 많다는 것을 알았습니다.</p></div></div></details></article><article class="quest"><div class="quest-top"><span class="code">PROJECT 03</span><span class="meta">공모전 · 팀 3명 · 기획</span></div><h3>지역 시장 살리기 캠페인</h3><p>대학생과 전통시장을 잇는 캠페인을 기획하고 발표했습니다.</p><p class="reward">성과: 마케팅 공모전 장려상</p></article></div></div></section><section id="rec" class="card rec" aria-label="30초 요약" hidden><div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px"><span class="label">한눈에 보기</span><span class="code">30초 요약</span></div><div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.35">박서윤 · 신입 콘텐츠·퍼포먼스 마케터</span><span style="font-size:18px;color:var(--muted)">작게 실험하고 숫자로 확인하는 마케터. 계정 운영과 광고 실습으로 기획부터 성과 분석까지 해봤습니다.</span></div><div class="rec-boxes"><div style="background:#FF9F5A"><b>핵심 역량</b><span>콘텐츠 기획, SNS 광고 세팅, 성과 분석</span></div><div style="background:#FFF0E5"><b>일하는 방식</b><span>가설을 세우고 작게 실험한 뒤 숫자로 판단</span></div><div style="background:#FFE4F1"><b>자격·수상</b><span>구글 애널리틱스 자격, 마케팅 공모전 장려상</span></div></div><div style="display:flex;flex-direction:column;gap:4px"><b>대표 프로젝트</b><div class="proj-row"><b>학과 인스타그램 계정 운영</b><span>주 3회 발행, 1년간 팔로워 두 배 성장</span></div><div class="proj-row"><b>카페 창업 SNS 광고 실습</b><span>소액 예산 A/B 테스트 3회</span></div><div class="proj-row"><b>지역 시장 살리기 캠페인</b><span>대학생과 전통시장을 잇는 캠페인 기획, 장려상</span></div></div></section></main>
+<footer>Made with AG Portfolio Studio</footer>
 <script>
-if (location.hash === '#both') document.body.classList.add('both');
-var btns = document.querySelectorAll('.toggle button');
-btns.forEach(function (b) {
-  b.addEventListener('click', function () {
-    var rec = b.getAttribute('data-mode') === 'rec';
-    document.getElementById('play').hidden = rec;
-    document.getElementById('rec').hidden = !rec;
-    btns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-  });
-});
+var btns=document.querySelectorAll('.toggle button');
+btns.forEach(function(b){b.addEventListener('click',function(){
+  var rec=b.getAttribute('data-mode')==='rec';
+  document.getElementById('play-wrap').hidden=rec;
+  document.getElementById('rec').hidden=!rec;
+  btns.forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
+});});
 </script>
 </body>
 </html>
