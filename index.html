@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AG 포트폴리오 스튜디오 | 탈락은 게임오버가 아니다</title>
+<meta name="description" content="취업 준비생과 신입을 위한 포트폴리오 웹사이트 제작. 채용담당자는 30초 만에 읽고, 당신은 다시 열어보고 싶어지는 포트폴리오.">
+<meta property="og:title" content="AG 포트폴리오 스튜디오">
+<meta property="og:description" content="탈락은 게임오버가 아니다. 세이브 포인트다. 취업 준비생을 위한 포트폴리오 웹사이트 제작.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='3' y='3' width='58' height='58' rx='12' fill='%23FFD23F' stroke='%23141414' stroke-width='5'/%3E%3Ctext x='32' y='42' font-family='monospace' font-weight='700' font-size='26' text-anchor='middle' fill='%23141414'%3EAG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141414; --yellow:#FFD23F; --blue:#3D5AFE; --pink:#FF6FB5; --mint:#7CF5C8;
+  --lav:#EEF0FF; --pinklight:#FFE4F1; --muted:#3A3F4A; --white:#FFFFFF;
+  --display:'Do Hyeon',sans-serif; --mono:'Space Mono',monospace;
+  --body:'IBM Plex Sans KR',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+a{color:inherit}
+img,svg{display:block}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.mono{font-family:var(--mono);font-weight:700}
+.display{font-family:var(--display);font-weight:400}
+.eyebrow{margin:0;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.14em;color:var(--blue)}
+.pill{display:inline-flex;align-self:flex-start;padding:6px 14px;border-radius:999px;border:2px solid var(--ink);background:var(--white);font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.1em}
+h1,h2,h3{margin:0}
+h2.title{font-family:var(--display);font-weight:400;font-size:clamp(36px,5vw,52px);line-height:1.15}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:12px;border:3px solid var(--ink);font-family:var(--body);font-weight:700;font-size:18px;text-decoration:none;cursor:pointer;box-shadow:5px 5px 0 var(--ink);transition:transform .12s, box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn:focus-visible,.chip input:focus-visible+span,.toggle button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.btn-blue{background:var(--blue);color:var(--white)}
+.btn-white{background:var(--white);color:var(--ink)}
+.card{border:3px solid var(--ink);border-radius:18px;background:var(--white);box-shadow:8px 8px 0 var(--ink)}
+
+/* nav */
+header.top{border-bottom:3px solid var(--ink);background:var(--white);position:sticky;top:0;z-index:20}
+header.top nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;border:3px solid var(--ink);background:var(--yellow);font-family:var(--mono);font-weight:700;font-size:17px;box-shadow:3px 3px 0 var(--ink)}
+.logo-text{font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.08em}
+.nav-links{display:flex;flex-wrap:wrap;align-items:center;gap:22px;font-size:15px;font-weight:500}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;border:3px solid var(--ink);background:var(--blue);color:var(--white)!important;font-weight:700;box-shadow:3px 3px 0 var(--ink)}
+@media (max-width:720px){.nav-links .hide-sm{display:none}.logo-text{display:none}}
+
+/* hero */
+.hero{background:var(--yellow);border-bottom:3px solid var(--ink)}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:56px;padding-top:88px;padding-bottom:104px}
+.hero-copy{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(46px,7vw,76px);line-height:1.1}
+.hero h1 .hl{display:inline-block;margin-top:8px;padding:0 14px;background:var(--ink);color:var(--yellow);border-radius:10px}
+.hero-sub{margin:0;max-width:560px;font-size:19px;font-weight:500}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px}
+.hero-art{flex:1 1 340px;min-width:0;display:flex;justify-content:center;position:relative;padding-top:24px}
+.sticker{position:absolute;top:0;right:4px;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:112px;height:112px;border-radius:50%;border:3px solid var(--ink);background:var(--pink);font-family:var(--display);font-size:20px;line-height:1.15;text-align:center;box-shadow:4px 4px 0 var(--ink);animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:rotate(-7deg) translateY(0)}50%{transform:rotate(-7deg) translateY(-6px)}}
+.save{width:100%;max-width:400px;padding:28px;display:flex;flex-direction:column;gap:20px;box-shadow:10px 10px 0 var(--ink);transform:rotate(2deg)}
+.save-head{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-weight:700;font-size:13px}
+.tag-dark{padding:2px 8px;border-radius:6px;background:var(--ink);color:var(--yellow)}
+.label-sm{font-family:var(--mono);font-size:12px;color:#5A5F6B}
+.bar{height:18px;border-radius:9px;border:2px solid var(--ink);background:var(--white);overflow:hidden}
+.bar>span{display:block;height:100%;background:var(--blue)}
+.mini-stats{display:flex;gap:10px}
+.mini-stats div{flex:1 1 0;min-width:0;border:2px solid var(--ink);border-radius:10px;padding:10px;display:flex;flex-direction:column;align-items:center}
+.mini-stats b{font-family:var(--mono);font-size:22px}
+.mini-stats small{font-size:12px}
+.continue{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;border-radius:12px;background:var(--ink);color:var(--yellow);font-family:var(--mono);font-weight:700;letter-spacing:.14em}
+
+/* marquee */
+.marquee{background:var(--ink);color:var(--white);overflow:hidden;padding:16px 0;border-bottom:3px solid var(--ink)}
+.track{display:flex;gap:40px;width:max-content;font-family:var(--display);font-size:26px;white-space:nowrap;animation:marquee 28s linear infinite}
+.track .y{color:var(--yellow)} .track .p{color:var(--pink)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track,.sticker{animation:none}.btn{transition:none}html{scroll-behavior:auto}}
+
+section.block{padding:96px 0}
+.section-head{display:flex;flex-direction:column;gap:12px;margin-bottom:40px}
+
+/* sample */
+.sample-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:32px}
+.dashed{display:inline-flex;align-self:flex-start;padding:6px 12px;border-radius:8px;border:2px dashed var(--ink);font-size:14px;font-weight:500;margin:0}
+.toggle{display:inline-flex;padding:5px;gap:5px;border-radius:14px;border:3px solid var(--ink);background:var(--white);box-shadow:4px 4px 0 var(--ink)}
+.toggle button{min-height:44px;padding:0 20px;border-radius:10px;border:2px solid transparent;background:transparent;color:var(--ink);font-family:var(--body);font-size:15px;font-weight:500;cursor:pointer}
+.toggle button[aria-pressed="true"]{border-color:var(--ink);background:var(--blue);color:var(--white);font-weight:700}
+.demo{padding:36px;box-shadow:10px 10px 0 var(--ink);border-radius:20px}
+@media (max-width:560px){.demo{padding:22px}}
+.play{display:flex;flex-wrap:wrap;gap:32px}
+.play-left{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.play-right{flex:999 1 420px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.avatar{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:16px;border:3px solid var(--ink);background:var(--pink);font-family:var(--display);font-size:34px}
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat-top{display:flex;justify-content:space-between;font-size:14px;font-weight:500}
+.bar.sm{height:16px;border-radius:8px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{padding:8px 12px;border-radius:10px;border:2px solid var(--ink);font-size:14px;font-weight:700}
+.quest{border:2px solid var(--ink);border-radius:14px;background:var(--lav);padding:20px 22px;display:flex;flex-direction:column;gap:8px;box-shadow:4px 4px 0 var(--ink)}
+.quest-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center}
+.code{padding:1px 8px;border-radius:6px;background:var(--blue);color:var(--white);font-family:var(--mono);font-size:12px;font-weight:700}
+.quest h4{margin:0;font-size:19px}
+.quest p{margin:0;font-size:15px;color:var(--muted)}
+.quest .reward{font-size:14px;font-weight:700;color:var(--ink)}
+.rec{display:flex;flex-direction:column;gap:28px}
+.rec-boxes{display:flex;flex-wrap:wrap;gap:16px}
+.rec-boxes div{flex:1 1 220px;min-width:0;border:2px solid var(--ink);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.proj-row{display:flex;flex-wrap:wrap;gap:12px;padding:12px 0;border-bottom:2px solid var(--ink)}
+.proj-row b{flex:0 0 240px}
+.proj-row span{flex:1 1 280px;min-width:0;color:var(--muted);font-size:15px}
+.small-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--ink);font-weight:700;text-decoration:none}
+
+/* rules */
+.rules{background:var(--blue);color:var(--white);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.rules .eyebrow{color:var(--yellow)}
+.grid3{display:flex;flex-wrap:wrap;gap:24px}
+.grid3>*{flex:1 1 300px;min-width:0}
+.rule{color:var(--ink);padding:32px;display:flex;flex-direction:column;gap:14px}
+.rule .num{align-self:flex-start;padding:2px 10px;border-radius:6px;border:2px solid var(--ink);font-family:var(--mono);font-size:13px;font-weight:700}
+.rule h3{font-size:24px}
+.rule p{margin:0;color:var(--muted)}
+
+/* process */
+.steps{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:24px}
+.steps li{flex:1 1 230px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;border:3px solid var(--ink);font-family:var(--display);font-size:30px;box-shadow:4px 4px 0 var(--ink)}
+.steps b{font-size:21px}
+.steps span.d{color:var(--muted);font-size:15px}
+
+/* pricing */
+.pricing{background:var(--lav);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.launch{display:inline-flex;align-self:flex-start;padding:6px 14px;border-radius:999px;border:2px solid var(--ink);background:var(--pink);font-weight:700;margin:0}
+.plans{display:flex;flex-wrap:wrap;gap:24px;align-items:stretch;margin-bottom:32px}
+.plan{flex:1 1 300px;min-width:0;padding:32px;display:flex;flex-direction:column;gap:20px;box-shadow:6px 6px 0 var(--ink)}
+.plan.best{background:var(--yellow);box-shadow:10px 10px 0 var(--ink);transform:translateY(-8px)}
+.plan .tier{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--blue)}
+.plan.best .tier{color:var(--ink)}
+.plan h3{font-size:24px}
+.price{font-size:32px;font-weight:700}
+.price small{font-size:15px;font-weight:500}
+.price s.list{display:block;font-size:16px;font-weight:500;color:var(--muted)}
+.plan.best .price s.list{color:var(--ink)}
+.plan ul{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.plan .meta{font-size:14px;color:var(--muted);margin:0}
+.plan.best .meta{color:var(--ink)}
+.cpass{border:3px solid var(--ink);border-radius:18px;background:var(--pink);padding:28px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;box-shadow:6px 6px 0 var(--ink)}
+.cpass>div{flex:999 1 420px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.cpass .display{font-size:30px;line-height:1.2}
+
+/* promise */
+.promise{background:var(--ink);color:var(--white)}
+.promise .wrap{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;padding-top:80px;padding-bottom:80px}
+.promise .eyebrow{color:var(--pink)}
+.promise-list{flex:999 1 480px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.promise-list div{display:flex;gap:14px;align-items:flex-start}
+.check{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--yellow);color:var(--ink)}
+.promise-list p{margin:0;font-size:19px}
+
+/* order */
+.order{background:var(--yellow);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.order .wrap{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start;padding-top:96px;padding-bottom:96px}
+.order-info{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:18px}
+.order-info h2{font-family:var(--display);font-weight:400;font-size:clamp(40px,5vw,56px);line-height:1.12}
+.next-box{display:flex;flex-direction:column;gap:10px;padding:20px;border:3px solid var(--ink);border-radius:16px;background:var(--white);box-shadow:5px 5px 0 var(--ink)}
+.form-card{flex:999 1 520px;min-width:0;padding:36px;border-radius:20px;box-shadow:10px 10px 0 var(--ink)}
+@media (max-width:560px){.form-card{padding:22px}}
+form{display:flex;flex-direction:column;gap:22px}
+.row{display:flex;flex-wrap:wrap;gap:16px}
+.field{flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.field label,legend{font-weight:700;font-size:15px}
+.req{color:#C0003C}
+input[type=text],input[type=email],input[type=url],input[type=date],textarea{min-height:48px;padding:0 14px;border:2px solid var(--ink);border-radius:10px;font-family:inherit;font-size:16px;background:var(--white);color:var(--ink)}
+textarea{padding:12px 14px;line-height:1.5;resize:vertical}
+fieldset{margin:0;padding:0;border:0}
+legend{padding:0;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:2px solid var(--ink);background:var(--white);font-size:15px;font-weight:500;cursor:pointer;user-select:none}
+.chip input:checked+span{background:var(--yellow);font-weight:700;box-shadow:3px 3px 0 var(--ink)}
+.agree{display:flex;gap:10px;align-items:flex-start}
+.agree input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--blue);flex:0 0 auto}
+.agree label{font-size:15px}
+.submit{min-height:60px;font-family:var(--display);font-size:24px;font-weight:400}
+.form-error{margin:0;padding:12px 14px;border:2px solid #C0003C;border-radius:10px;background:#FFF0F3;color:#8A0029;font-weight:500}
+.done{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;padding:32px 8px}
+.done-icon{display:inline-flex;align-items:center;justify-content:center;width:96px;height:96px;border-radius:50%;border:3px solid var(--ink);background:var(--yellow);box-shadow:5px 5px 0 var(--ink)}
+.done h3{font-family:var(--display);font-weight:400;font-size:40px;line-height:1.2}
+.done p{max-width:440px;margin:0;font-size:17px;color:var(--muted)}
+
+footer{background:var(--ink);color:var(--white)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:28px;padding-bottom:28px;font-size:14px}
+footer span:last-child{color:#D6D8DE}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<header class="top">
+<nav class="wrap" aria-label="주요 메뉴">
+  <a href="#top" class="logo"><span class="logo-mark">AG</span><span class="logo-text">PORTFOLIO STUDIO</span></a>
+  <div class="nav-links">
+    <a href="#sample" class="hide-sm">샘플</a>
+    <a href="#rules" class="hide-sm">AG의 규칙</a>
+    <a href="#process" class="hide-sm">진행 방식</a>
+    <a href="#pricing">가격</a>
+    <a href="#order" class="nav-cta">의뢰서 쓰기</a>
+  </div>
+</nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="pill">PORTFOLIO FOR JOB SEEKERS</p>
+      <h1>탈락은 게임오버가 아니다.<br><span class="hl">세이브 포인트다.</span></h1>
+      <p class="hero-sub">AG는 취업 준비생과 신입을 위한 포트폴리오 웹사이트를 만듭니다. 채용담당자는 30초 만에 핵심을 읽고, 당신은 결과와 상관없이 다시 열어보고 싶어지는 포트폴리오.</p>
+      <div class="btn-row">
+        <a href="#order" class="btn btn-blue">새 게임 시작하기
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#sample" class="btn btn-white">샘플 플레이해보기</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <span class="sticker">게임오버<br>없음!</span>
+      <div class="card save">
+        <div class="save-head"><span>SAVE FILE 01 · AUTO-SAVED</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <span class="label-sm">PLAYER</span>
+          <span class="display" style="font-size:40px;line-height:1.2">당신</span>
+          <span style="font-size:15px;color:var(--muted)">직업: 지원 준비 중 · 다음 목적지: 서류 합격</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="mono" style="display:flex;justify-content:space-between;font-size:12px"><span>PROGRESS</span><span>72%</span></div>
+          <div class="bar"><span style="width:72%"></span></div>
+        </div>
+        <div class="mini-stats">
+          <div style="background:var(--lav)"><b>03</b><small>퀘스트</small></div>
+          <div style="background:var(--pinklight)"><b>02</b><small>업적</small></div>
+          <div style="background:var(--yellow)"><b>∞</b><small>재도전</small></div>
+        </div>
+        <div class="continue">CONTINUE <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l14 8-14 8z"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>NEW GAME</span><span class="y">★</span><span>30초 안에 읽히는 포트폴리오</span><span class="p">★</span><span>CONTINUE</span><span class="y">★</span><span>떨어져도 다시 쓰고 싶게</span><span class="p">★</span><span>LEVEL UP</span><span class="y">★</span><span>없는 경력은 만들지 않는다</span><span class="p">★</span>
+    <span>NEW GAME</span><span class="y">★</span><span>30초 안에 읽히는 포트폴리오</span><span class="p">★</span><span>CONTINUE</span><span class="y">★</span><span>떨어져도 다시 쓰고 싶게</span><span class="p">★</span><span>LEVEL UP</span><span class="y">★</span><span>없는 경력은 만들지 않는다</span><span class="p">★</span>
+  </div>
+</div>
+
+<section id="sample" class="block">
+  <div class="wrap">
+    <div class="sample-head">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <p class="eyebrow">DEMO</p>
+        <h2 class="title">샘플 플레이</h2>
+        <p class="dashed">SAMPLE · 가상의 인물로 만든 데모입니다</p>
+      </div>
+      <div class="toggle" role="group" aria-label="보기 모드">
+        <button type="button" data-mode="play" aria-pressed="true">플레이 모드</button>
+        <button type="button" data-mode="rec" aria-pressed="false">30초 모드</button>
+      </div>
+    </div>
+
+    <div class="card demo">
+      <div id="mode-play" class="play">
+        <div class="play-left">
+          <div style="display:flex;align-items:center;gap:16px">
+            <span class="avatar" aria-hidden="true">한</span>
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <span class="tag-dark mono" style="align-self:flex-start;font-size:12px;padding:1px 8px">LV.1 PLAYER</span>
+              <span class="display" style="font-size:36px;line-height:1.2">한도윤</span>
+              <span style="font-size:14px;color:var(--muted)">클래스: 주니어 프론트엔드 개발자</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <span class="mono" style="font-size:12px;letter-spacing:.1em">STATS</span>
+            <div class="stat"><div class="stat-top"><span>React</span><span class="mono">70</span></div><div class="bar sm"><span style="width:70%"></span></div></div>
+            <div class="stat"><div class="stat-top"><span>TypeScript</span><span class="mono">55</span></div><div class="bar sm"><span style="width:55%"></span></div></div>
+            <div class="stat"><div class="stat-top"><span>UI 설계</span><span class="mono">60</span></div><div class="bar sm"><span style="width:60%"></span></div></div>
+            <div class="stat"><div class="stat-top"><span>협업</span><span class="mono">75</span></div><div class="bar sm"><span style="width:75%"></span></div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span class="mono" style="font-size:12px;letter-spacing:.1em">ACHIEVEMENTS</span>
+            <div class="badges"><span class="badge" style="background:var(--yellow)">교내 해커톤 장려상</span><span class="badge" style="background:var(--pinklight)">정보처리기사</span></div>
+          </div>
+        </div>
+        <div class="play-right">
+          <span class="mono" style="font-size:12px;letter-spacing:.1em">QUEST LOG</span>
+          <article class="quest">
+            <div class="quest-top"><span class="code">QUEST 01</span><span style="font-size:13px;color:var(--muted)">팀 4명 · 프론트엔드 담당</span></div>
+            <h4>캠퍼스 중고거래 웹앱</h4>
+            <p>학과 단위로 거래를 묶는 중고거래 서비스. 검색과 채팅 화면을 만들었습니다.</p>
+            <p class="reward">보상: 베타 사용자 피드백을 받아 화면 두 번 개편</p>
+          </article>
+          <article class="quest">
+            <div class="quest-top"><span class="code">QUEST 02</span><span style="font-size:13px;color:var(--muted)">개인 프로젝트</span></div>
+            <h4>스터디 출석 체크 도구</h4>
+            <p>스터디 모임의 출석과 벌금을 자동으로 계산하는 작은 웹 도구.</p>
+            <p class="reward">보상: 실제 스터디 모임에서 한 학기 사용</p>
+          </article>
+          <article class="quest">
+            <div class="quest-top"><span class="code">QUEST 03</span><span style="font-size:13px;color:var(--muted)">해커톤 · 팀 3명</span></div>
+            <h4>동네 가게 대기열 알림</h4>
+            <p>48시간 해커톤에서 만든 대기 순서 알림 서비스의 화면 전체를 맡았습니다.</p>
+            <p class="reward">보상: 교내 해커톤 장려상</p>
+          </article>
+        </div>
+      </div>
+
+      <div id="mode-rec" class="rec" hidden>
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px">
+          <span class="mono" style="font-size:12px;letter-spacing:.1em">30-SECOND SUMMARY</span>
+          <span class="code">READ TIME 0:30</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.35">한도윤 · 주니어 프론트엔드 개발자</span>
+          <span style="font-size:18px;color:var(--muted)">사용자 피드백을 빠르게 화면에 반영하는 개발자. 팀 프로젝트 3건에서 프론트엔드를 맡았습니다.</span>
+        </div>
+        <div class="rec-boxes">
+          <div style="background:var(--yellow)"><b>핵심 역량</b><span style="font-size:15px">React, TypeScript, 반응형 UI 설계</span></div>
+          <div style="background:var(--lav)"><b>일하는 방식</b><span style="font-size:15px">작게 만들고 자주 확인받기, 문서로 합의하기</span></div>
+          <div style="background:var(--pinklight)"><b>자격·수상</b><span style="font-size:15px">정보처리기사, 교내 해커톤 장려상</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <b>대표 프로젝트</b>
+          <div class="proj-row"><b>캠퍼스 중고거래 웹앱</b><span>검색·채팅 화면 구현, 사용자 피드백으로 두 차례 개편</span></div>
+          <div class="proj-row"><b>스터디 출석 체크 도구</b><span>출석·벌금 자동 계산 도구, 한 학기 실사용</span></div>
+          <div class="proj-row"><b>동네 가게 대기열 알림</b><span>대기 알림 서비스 화면 전체 담당, 해커톤 장려상</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <span class="small-btn" style="background:var(--blue);color:var(--white)">이력서 PDF (샘플)</span>
+          <span class="small-btn">GitHub (샘플)</span>
+          <span class="small-btn">이메일 (샘플)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rules" class="block rules">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">GAME RULES</p><h2 class="title">AG의 규칙 세 가지</h2></div>
+    <div class="grid3">
+      <article class="card rule"><span class="num" style="background:var(--yellow)">RULE 01</span><h3>모드는 두 개</h3><p>플레이 모드에서는 방문자가 프로젝트를 퀘스트처럼 탐험합니다. 30초 모드는 바쁜 채용담당자를 위한 한 화면 요약입니다. 버튼 하나로 오갑니다.</p></article>
+      <article class="card rule"><span class="num" style="background:var(--pink)">RULE 02</span><h3>재미있게, 그러나 가볍지 않게</h3><p>게임의 문법은 빌리되 내용은 진지하게 다룹니다. 기술은 스탯으로, 프로젝트는 퀘스트로, 수상과 자격증은 업적으로 정리합니다.</p></article>
+      <article class="card rule"><span class="num" style="background:var(--mint)">RULE 03</span><h3>게임오버는 없다</h3><p>지원 결과가 어떻든 포트폴리오는 계속됩니다. 새 프로젝트나 경력이 생기면 컨티뉴 패스로 부담 없이 업데이트하고 다시 도전하세요.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="block">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">HOW IT WORKS</p><h2 class="title">진행 방식: 네 개의 스테이지</h2></div>
+    <ol class="steps">
+      <li><span class="step-num" style="background:var(--yellow)">1</span><b>캐릭터 생성</b><span class="d">아래 의뢰서에 경력, 프로젝트, 원하는 분위기를 적어주세요. 자료가 정리되어 있지 않아도 괜찮습니다.</span></li>
+      <li><span class="step-num" style="background:var(--pink)">2</span><b>퀘스트 정리</b><span class="d">받은 자료를 채용담당자의 시선으로 다시 정리합니다. 과장 없이, 한 일이 가장 잘 보이게.</span></li>
+      <li><span class="step-num" style="background:var(--mint)">3</span><b>빌드</b><span class="d">플레이 모드와 30초 모드를 만들고 시안 링크를 보내드립니다. 수정 요청은 이 단계에서 반영합니다.</span></li>
+      <li><span class="step-num" style="background:var(--blue);color:var(--white)">4</span><b>세이브</b><span class="d">사이트를 배포하고 링크를 전달합니다. 지원서와 이력서에 그대로 붙이면 됩니다.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="pricing" class="block pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">CHOOSE YOUR GEAR</p>
+      <h2 class="title">가격</h2>
+      <p class="launch" data-cfg="launchText"></p>
+    </div>
+    <div class="plans">
+      <article class="card plan">
+        <div style="display:flex;flex-direction:column;gap:6px"><span class="tier">STARTER</span><h3>스타터</h3><span class="price"><s class="list" data-cfg="listStarter"></s> <span data-cfg="priceStarter"></span></span><p class="meta" data-cfg="daysStarter"></p></div>
+        <ul><li>30초 모드 한 페이지</li><li>기본 테마 중 선택</li><li>수정 1회</li><li>무료 호스팅 배포</li></ul>
+      </article>
+      <article class="card plan best">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="tier">STANDARD</span><span class="tag-dark" style="font-size:13px;font-weight:700;padding:4px 10px">추천</span></div>
+          <h3>스탠다드</h3><span class="price"><s class="list" data-cfg="listStandard"></s> <span data-cfg="priceStandard"></span></span><p class="meta" data-cfg="daysStandard"></p>
+        </div>
+        <ul><li>플레이 모드 + 30초 모드</li><li>프로젝트 상세 최대 5개</li><li>맞춤 색상과 분위기</li><li>수정 2회</li><li>무료 호스팅 배포</li></ul>
+      </article>
+      <article class="card plan">
+        <div style="display:flex;flex-direction:column;gap:6px"><span class="tier">PREMIUM</span><h3>프리미엄</h3><span class="price"><s class="list" data-cfg="listPremium"></s> <span data-cfg="pricePremium"></span></span><p class="meta" data-cfg="daysPremium"></p></div>
+        <ul><li>스탠다드의 모든 것</li><li>소개 문구와 프로젝트 설명 정리</li><li>PDF 이력서 버전</li><li>개인 도메인 연결 안내</li><li>수정 3회</li></ul>
+      </article>
+    </div>
+    <div class="cpass">
+      <div>
+        <span class="mono" style="font-size:13px">CONTINUE PASS</span>
+        <span class="display">떨어져도, 붙어도, 다음 판은 더 쉽게</span>
+        <span style="font-size:15px;font-weight:500">AG에서 만든 포트폴리오는 새 프로젝트나 경력이 생길 때마다 <b data-cfg="priceContinue"></b>에 업데이트해 드립니다.</span>
+      </div>
+      <a href="#order" class="btn btn-white" style="min-height:52px;font-size:16px">컨티뉴 신청</a>
+    </div>
+  </div>
+</section>
+
+<section class="promise" aria-labelledby="promise-title">
+  <div class="wrap">
+    <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:12px">
+      <p class="eyebrow">NO CHEAT CODES</p>
+      <h2 id="promise-title" class="display" style="font-size:46px;line-height:1.2">AG의 약속</h2>
+    </div>
+    <div class="promise-list">
+      <div><span class="check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><p>없는 경력은 만들지 않습니다. 당신이 실제로 한 일을 가장 잘 보이게 할 뿐입니다.</p></div>
+      <div><span class="check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><p>작업 범위와 수정 횟수는 시작 전에 문서로 정확히 안내합니다.</p></div>
+      <div><span class="check" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span><p>채용담당자가 30초 안에 읽을 수 없다면, 다시 만듭니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="order" class="order">
+  <div class="wrap">
+    <div class="order-info">
+      <p class="pill">PRESS START</p>
+      <h2>의뢰서 한 장이면<br>새 게임 시작</h2>
+      <p style="margin:0;font-size:18px;font-weight:500">자료가 아직 엉망이어도 괜찮아요. 정리는 AG가 합니다. 작성에 5분이면 충분합니다.</p>
+      <div class="next-box">
+        <b>의뢰서를 보내면</b>
+        <span style="font-size:15px">1. <span data-cfg="replyTime"></span> 안에 견적과 일정을 보내드립니다.</span>
+        <span style="font-size:15px">2. 크몽 안전결제로 결제합니다.</span>
+        <span style="font-size:15px">3. 바로 작업을 시작합니다.</span>
+      </div>
+      <p style="margin:0;font-size:15px" id="alt-contact"></p>
+    </div>
+
+    <div class="card form-card">
+      <form id="order-form" novalidate>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <span class="display" style="font-size:32px">캐릭터 생성</span>
+          <span class="tag-dark mono" style="font-size:12px">STAGE 1 / 4</span>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f-name">이름 또는 닉네임 <span class="req">*</span></label><input id="f-name" name="이름" type="text" autocomplete="name" required placeholder="예: 한도윤"></div>
+          <div class="field"><label for="f-email">연락받을 이메일 <span class="req">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="f-job">지원하려는 직무</label><input id="f-job" name="직무" type="text" placeholder="예: 프론트엔드 개발, UX 디자인"></div>
+          <div class="field"><label for="f-date">필요한 날짜</label><input id="f-date" name="필요날짜" type="date"></div>
+        </div>
+        <fieldset>
+          <legend>장비 선택 <span class="req">*</span></legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="상품" value="스타터"><span>스타터</span></label>
+            <label class="chip"><input type="radio" name="상품" value="스탠다드" checked><span>스탠다드 (추천)</span></label>
+            <label class="chip"><input type="radio" name="상품" value="프리미엄"><span>프리미엄</span></label>
+            <label class="chip"><input type="radio" name="상품" value="컨티뉴 패스"><span>컨티뉴 패스</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>원하는 분위기 (여러 개 선택 가능)</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="분위기" value="깔끔하게" checked><span>깔끔하게</span></label>
+            <label class="chip"><input type="checkbox" name="분위기" value="게임 느낌 강하게"><span>게임 느낌 강하게</span></label>
+            <label class="chip"><input type="checkbox" name="분위기" value="귀엽게"><span>귀엽게</span></label>
+            <label class="chip"><input type="checkbox" name="분위기" value="진지하고 단단하게"><span>진지하고 단단하게</span></label>
+            <label class="chip"><input type="checkbox" name="분위기" value="컬러풀하게"><span>컬러풀하게</span></label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="f-links">자료 링크 (이력서, GitHub, 작업물 폴더 등)</label><input id="f-links" name="자료링크" type="url" placeholder="https://"></div>
+        <div class="field"><label for="f-note">꼭 보여주고 싶은 것, 하고 싶은 말</label><textarea id="f-note" name="메모" rows="4" placeholder="예: 팀 프로젝트에서 제가 맡은 부분이 잘 드러났으면 좋겠어요."></textarea></div>
+        <div class="agree"><input id="f-agree" name="동의" type="checkbox" value="동의함" required><label for="f-agree">견적 안내를 위해 이름과 이메일을 수집하는 데 동의합니다. 실제 경험만 담는다는 AG의 약속을 확인했습니다. <span class="req">*</span></label></div>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+        <button type="submit" class="btn btn-blue submit" id="submit-btn">의뢰서 보내기 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></button>
+      </form>
+
+      <div id="form-done" class="done" role="status" hidden>
+        <span class="done-icon" aria-hidden="true"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>
+        <span class="mono" style="font-size:14px;letter-spacing:.14em;color:var(--blue)">GAME SAVED</span>
+        <h3>의뢰서가 접수됐습니다!</h3>
+        <p>선택한 장비: <strong id="done-product" style="color:var(--ink)"></strong><br><span data-cfg="replyTime"></span> 안에 견적과 일정을 이메일로 보내드릴게요. 확인 후 크몽 안전결제로 결제하시면 바로 시작합니다.</p>
+        <div class="btn-row" style="justify-content:center">
+          <a id="done-kmong" class="btn btn-blue" style="min-height:52px;font-size:16px" target="_blank" rel="noopener">크몽 서비스 페이지</a>
+          <button type="button" id="done-reset" class="btn btn-white" style="min-height:52px;font-size:16px">처음으로</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">© AG PORTFOLIO STUDIO</span>
+    <span>이 페이지의 샘플은 가상의 인물로 만든 데모입니다.</span>
+  </div>
+</footer>
+
+<script>
+/* ===== 여기만 고치면 사이트 전체에 반영됩니다 ===== */
+var CONFIG = {
+  formspree:     "https://formspree.io/f/mnpdzgwg",
+  kmongUrl:      "",              // 크몽 서비스 페이지 주소 (등록 후 입력)
+  openChatUrl:   "",              // 카카오 오픈채팅 주소 (없으면 비워두기)
+  contactEmail:  "",              // 공개해도 되는 연락 이메일 (없으면 비워두기)
+  replyTime:     "24시간",
+  launchText:    "런칭 기념: 선착순 50명 40% 할인",
+  listStarter:   "59,000원",
+  priceStarter:  "35,000원",
+  listStandard:  "99,000원",
+  priceStandard: "59,000원",
+  listPremium:   "159,000원",
+  pricePremium:  "95,000원",
+  priceContinue: "29,000원",
+  daysStarter:   "2일 이내 완성",
+  daysStandard:  "4일 이내 완성",
+  daysPremium:   "7일 이내 완성"
+};
+/* ================================================ */
+
+(function () {
+  document.querySelectorAll('[data-cfg]').forEach(function (el) {
+    var v = CONFIG[el.getAttribute('data-cfg')];
+    if (v) el.textContent = v; else el.hidden = true;
+  });
+
+  var alt = document.getElementById('alt-contact');
+  var parts = [];
+  function link(href, text) { var a = document.createElement('a'); a.href = href; a.textContent = text; a.target = '_blank'; a.rel = 'noopener'; a.style.fontWeight = '700'; return a; }
+  if (CONFIG.kmongUrl) parts.push(link(CONFIG.kmongUrl, '크몽'));
+  if (CONFIG.openChatUrl) parts.push(link(CONFIG.openChatUrl, '오픈채팅'));
+  if (CONFIG.contactEmail) parts.push(link('mailto:' + CONFIG.contactEmail, CONFIG.contactEmail));
+  if (parts.length) {
+    alt.appendChild(document.createTextNode('폼이 불편하면: '));
+    parts.forEach(function (p, i) { if (i) alt.appendChild(document.createTextNode(' · ')); alt.appendChild(p); });
+  } else { alt.hidden = true; }
+
+  var kmongBtn = document.getElementById('done-kmong');
+  if (CONFIG.kmongUrl) kmongBtn.href = CONFIG.kmongUrl; else kmongBtn.hidden = true;
+
+  /* 샘플 모드 전환 */
+  var btns = document.querySelectorAll('.toggle button');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var rec = b.getAttribute('data-mode') === 'rec';
+      document.getElementById('mode-play').hidden = rec;
+      document.getElementById('mode-rec').hidden = !rec;
+      btns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+    });
+  });
+
+  /* 의뢰서 전송 */
+  var form = document.getElementById('order-form');
+  var err = document.getElementById('form-error');
+  var done = document.getElementById('form-done');
+  var submitBtn = document.getElementById('submit-btn');
+  function showError(msg) { err.textContent = msg; err.hidden = false; }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.hidden = true;
+    var name = form.querySelector('#f-name'), email = form.querySelector('#f-email'), agree = form.querySelector('#f-agree');
+    if (!name.value.trim()) { showError('이름 또는 닉네임을 적어주세요.'); name.focus(); return; }
+    if (!email.value.trim() || !email.checkValidity()) { showError('연락받을 이메일을 정확히 적어주세요.'); email.focus(); return; }
+    if (!agree.checked) { showError('개인정보 수집에 동의해 주세요.'); agree.focus(); return; }
+    if (!CONFIG.formspree) { showError('아직 의뢰서 접수 준비 중입니다. 잠시 후 다시 시도해 주세요.'); return; }
+
+    var data = new FormData(form);
+    var moods = data.getAll('분위기');
+    data.delete('분위기');
+    data.append('분위기', moods.join(', ') || '선택 안 함');
+    data.append('_subject', '[AG 의뢰서] ' + name.value.trim() + ' / ' + (data.get('상품') || ''));
+
+    submitBtn.disabled = true;
+    submitBtn.firstChild.textContent = '보내는 중… ';
+    fetch(CONFIG.formspree, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(function (r) {
+        if (!r.ok) throw new Error('send failed');
+        document.getElementById('done-product').textContent = data.get('상품') || '';
+        form.hidden = true; done.hidden = false;
+        done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch(function () { showError('전송에 실패했습니다. 잠시 후 다시 시도하거나 아래 연락처로 문의해 주세요.'); })
+      .then(function () { submitBtn.disabled = false; submitBtn.firstChild.textContent = '의뢰서 보내기 '; });
+  });
+
+  document.getElementById('done-reset').addEventListener('click', function () {
+    form.reset(); done.hidden = true; form.hidden = false;
+  });
+})();
+</script>
+</body>
+</html>
