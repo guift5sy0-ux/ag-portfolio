@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>서지안 · 주니어 UX/UI 디자이너 | AG 샘플 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#141414;--hero:#7CF5C8;--accent:#141414;--accent-text:#7CF5C8;--soft:#E9FBF4;--muted:#3A3F4A}
+*{box-sizing:border-box}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'IBM Plex Sans KR',system-ui,sans-serif;font-size:16px;line-height:1.6}
+.mono{font-family:'Space Mono',monospace;font-weight:700}
+.display{font-family:'Do Hyeon',sans-serif;font-weight:400}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.notice{background:var(--ink);color:#FFFFFF;font-size:13px;text-align:center;padding:8px 16px}
+.notice b{color:var(--hero)}
+.hero{background:var(--hero);border-bottom:3px solid var(--ink)}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-top:48px;padding-bottom:48px}
+.who{display:flex;align-items:center;gap:20px;flex:999 1 480px;min-width:0}
+.avatar{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:96px;height:96px;border-radius:20px;border:3px solid var(--ink);background:#FFD23F;font-family:'Do Hyeon',sans-serif;font-size:46px;box-shadow:5px 5px 0 var(--ink)}
+.lv{align-self:flex-start;padding:2px 10px;border-radius:6px;background:var(--ink);color:var(--hero);font-size:12px}
+.who h1{margin:0;font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:clamp(40px,6vw,56px);line-height:1.1}
+.who p{margin:0;font-size:17px;font-weight:500}
+.toggle{display:inline-flex;padding:5px;gap:5px;border-radius:14px;border:3px solid var(--ink);background:#FFFFFF;box-shadow:4px 4px 0 var(--ink)}
+.toggle button{min-height:44px;padding:0 18px;border-radius:10px;border:2px solid transparent;background:transparent;color:var(--ink);font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.toggle button[aria-pressed="true"]{border-color:var(--ink);background:var(--accent);color:var(--accent-text);font-weight:700}
+.toggle button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+main.wrap{padding-top:56px;padding-bottom:72px}
+.panel-title{display:none;margin:0 0 20px;font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:30px}
+.card{border:3px solid var(--ink);border-radius:20px;background:#FFFFFF;padding:36px;box-shadow:10px 10px 0 var(--ink)}
+@media (max-width:560px){.card{padding:22px}}
+.play{display:flex;flex-wrap:wrap;gap:32px}
+.left{flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.right{flex:999 1 400px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.label{font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.1em}
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat-top{display:flex;justify-content:space-between;font-size:14px;font-weight:500}
+.bar{height:16px;border-radius:8px;border:2px solid var(--ink);background:#FFFFFF;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--accent)}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{padding:8px 12px;border-radius:10px;border:2px solid var(--ink);font-size:14px;font-weight:700}
+.quest{border:2px solid var(--ink);border-radius:14px;background:var(--soft);padding:20px 22px;display:flex;flex-direction:column;gap:8px;box-shadow:4px 4px 0 var(--ink)}
+.quest-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center}
+.code{padding:1px 8px;border-radius:6px;background:var(--accent);color:var(--accent-text);font-family:'Space Mono',monospace;font-size:12px;font-weight:700}
+.meta{font-size:13px;color:var(--muted)}
+.quest h4{margin:0;font-size:19px}
+.quest p{margin:0;font-size:15px;color:var(--muted)}
+.quest .reward{font-size:14px;font-weight:700;color:var(--ink)}
+.rec{display:flex;flex-direction:column;gap:28px}
+.rec-boxes{display:flex;flex-wrap:wrap;gap:16px}
+.rec-boxes div{flex:1 1 220px;min-width:0;border:2px solid var(--ink);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.proj-row{display:flex;flex-wrap:wrap;gap:12px;padding:12px 0;border-bottom:2px solid var(--ink)}
+.proj-row b{flex:0 0 240px}
+.proj-row span{flex:1 1 260px;min-width:0;color:var(--muted);font-size:15px}
+.contacts{display:flex;flex-wrap:wrap;gap:10px}
+.contacts span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--ink);font-weight:700}
+footer{border-top:3px solid var(--ink);padding:20px 24px;text-align:center;font-size:14px}
+footer a{color:var(--ink);font-weight:700}
+[hidden]{display:none!important}
+body.both .toggle{display:none}
+body.both .panel-title{display:block}
+body.both #rec{display:flex!important}
+body.both #rec-wrap{display:block!important}
+</style>
+</head>
+<body>
+<div class="notice"><b>SAMPLE</b> · 가상의 인물로 만든 AG 포트폴리오 데모입니다</div>
+<header class="hero">
+  <div class="wrap">
+    <div class="who">
+      <span class="avatar" aria-hidden="true">서</span>
+      <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+        <span class="lv mono">LV.1 PLAYER</span>
+        <h1>서지안</h1>
+        <p>주니어 UX/UI 디자이너</p>
+      </div>
+    </div>
+    <div class="toggle" role="group" aria-label="보기 모드">
+      <button type="button" data-mode="play" aria-pressed="true">플레이 모드</button>
+      <button type="button" data-mode="rec" aria-pressed="false">30초 모드</button>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <section id="play-wrap">
+    <h2 class="panel-title">플레이 모드 · 방문자용</h2>
+    <div id="play" class="card play">
+      <div class="left">
+        <div style="display:flex;flex-direction:column;gap:14px"><span class="label">STATS</span><div class="stat"><div class="stat-top"><span>Figma</span><span class="mono">80</span></div><div class="bar"><span style="width:80%"></span></div></div><div class="stat"><div class="stat-top"><span>사용자 리서치</span><span class="mono">60</span></div><div class="bar"><span style="width:60%"></span></div></div><div class="stat"><div class="stat-top"><span>프로토타이핑</span><span class="mono">70</span></div><div class="bar"><span style="width:70%"></span></div></div><div class="stat"><div class="stat-top"><span>디자인 시스템</span><span class="mono">55</span></div><div class="bar"><span style="width:55%"></span></div></div></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span class="label">ACHIEVEMENTS</span><div class="badges"><span class="badge" style="background:#7CF5C8">디자인 공모전 입선</span><span class="badge" style="background:#FFF4CC">GTQ 1급</span></div></div>
+      </div>
+      <div class="right"><span class="label">QUEST LOG</span><article class="quest"><div class="quest-top"><span class="code">QUEST 01</span><span class="meta">개인 프로젝트 · 리서치부터 UI까지</span></div><h4>동네 도서관 예약 앱 리디자인</h4><p>이용자 8명을 인터뷰하고 예약 흐름을 처음부터 다시 설계했습니다.</p><p class="reward">보상: 예약 과정을 5단계에서 3단계로 줄인 프로토타입</p></article><article class="quest"><div class="quest-top"><span class="code">QUEST 02</span><span class="meta">팀 5명 · 디자인 리드</span></div><h4>교내 축제 웹 브랜딩</h4><p>포스터, 웹페이지, 굿즈까지 하나의 비주얼 시스템으로 묶었습니다.</p><p class="reward">보상: 축제 웹페이지와 홍보물 디자인 총괄</p></article><article class="quest"><div class="quest-top"><span class="code">QUEST 03</span><span class="meta">디자인 공모전 · 개인</span></div><h4>반려식물 관리 앱 프로토타입</h4><p>물 주기 알림과 성장 기록을 한 화면에 담은 앱을 설계했습니다.</p><p class="reward">보상: 공모전 입선</p></article></div>
+    </div>
+  </section>
+  <section id="rec-wrap">
+    <h2 class="panel-title" style="margin-top:56px">30초 모드 · 채용담당자용</h2>
+    <div id="rec" class="card rec" hidden>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px">
+        <span class="label">30-SECOND SUMMARY</span><span class="code">READ TIME 0:30</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <span style="font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.35">서지안 · 주니어 UX/UI 디자이너</span>
+        <span style="font-size:18px;color:var(--muted)">사용자 인터뷰에서 출발해 화면을 설계하는 디자이너. 리서치부터 프로토타입까지 혼자 끝까지 갑니다.</span>
+      </div>
+      <div class="rec-boxes"><div style="background:#7CF5C8"><b>핵심 역량</b><span>사용자 인터뷰, Figma 프로토타입, 디자인 시스템</span></div><div style="background:#E9FBF4"><b>일하는 방식</b><span>문제 정의를 먼저 합의하고, 화면은 그다음에</span></div><div style="background:#FFF4CC"><b>자격·수상</b><span>GTQ 1급, 디자인 공모전 입선</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><b>대표 프로젝트</b><div class="proj-row"><b>동네 도서관 예약 앱 리디자인</b><span>예약 과정을 5단계에서 3단계로 줄인 프로토타입</span></div><div class="proj-row"><b>교내 축제 웹 브랜딩</b><span>축제 웹페이지와 홍보물 디자인 총괄</span></div><div class="proj-row"><b>반려식물 관리 앱 프로토타입</b><span>공모전 입선</span></div></div>
+      <div class="contacts"><span style="background:var(--accent);color:var(--accent-text)">이력서 PDF (샘플)</span><span>작업물 링크 (샘플)</span><span>이메일 (샘플)</span></div>
+    </div>
+  </section>
+</main>
+<footer>Made by <a href="../">AG Portfolio Studio</a> · 이 페이지는 가상의 인물로 만든 샘플입니다</footer>
+<script>
+if (location.hash === '#both') document.body.classList.add('both');
+var btns = document.querySelectorAll('.toggle button');
+btns.forEach(function (b) {
+  b.addEventListener('click', function () {
+    var rec = b.getAttribute('data-mode') === 'rec';
+    document.getElementById('play').hidden = rec;
+    document.getElementById('rec').hidden = !rec;
+    btns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+  });
+});
+</script>
+</body>
+</html>

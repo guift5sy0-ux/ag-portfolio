@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>박서윤 · 신입 콘텐츠·퍼포먼스 마케터 | AG 샘플 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#141414;--hero:#FF9F5A;--accent:#141414;--accent-text:#FF9F5A;--soft:#FFF0E5;--muted:#3A3F4A}
+*{box-sizing:border-box}
+body{margin:0;background:#FFFFFF;color:var(--ink);font-family:'IBM Plex Sans KR',system-ui,sans-serif;font-size:16px;line-height:1.6}
+.mono{font-family:'Space Mono',monospace;font-weight:700}
+.display{font-family:'Do Hyeon',sans-serif;font-weight:400}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.notice{background:var(--ink);color:#FFFFFF;font-size:13px;text-align:center;padding:8px 16px}
+.notice b{color:var(--hero)}
+.hero{background:var(--hero);border-bottom:3px solid var(--ink)}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-top:48px;padding-bottom:48px}
+.who{display:flex;align-items:center;gap:20px;flex:999 1 480px;min-width:0}
+.avatar{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:96px;height:96px;border-radius:20px;border:3px solid var(--ink);background:#7CF5C8;font-family:'Do Hyeon',sans-serif;font-size:46px;box-shadow:5px 5px 0 var(--ink)}
+.lv{align-self:flex-start;padding:2px 10px;border-radius:6px;background:var(--ink);color:var(--hero);font-size:12px}
+.who h1{margin:0;font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:clamp(40px,6vw,56px);line-height:1.1}
+.who p{margin:0;font-size:17px;font-weight:500}
+.toggle{display:inline-flex;padding:5px;gap:5px;border-radius:14px;border:3px solid var(--ink);background:#FFFFFF;box-shadow:4px 4px 0 var(--ink)}
+.toggle button{min-height:44px;padding:0 18px;border-radius:10px;border:2px solid transparent;background:transparent;color:var(--ink);font-family:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.toggle button[aria-pressed="true"]{border-color:var(--ink);background:var(--accent);color:var(--accent-text);font-weight:700}
+.toggle button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+main.wrap{padding-top:56px;padding-bottom:72px}
+.panel-title{display:none;margin:0 0 20px;font-family:'Do Hyeon',sans-serif;font-weight:400;font-size:30px}
+.card{border:3px solid var(--ink);border-radius:20px;background:#FFFFFF;padding:36px;box-shadow:10px 10px 0 var(--ink)}
+@media (max-width:560px){.card{padding:22px}}
+.play{display:flex;flex-wrap:wrap;gap:32px}
+.left{flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.right{flex:999 1 400px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.label{font-family:'Space Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.1em}
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat-top{display:flex;justify-content:space-between;font-size:14px;font-weight:500}
+.bar{height:16px;border-radius:8px;border:2px solid var(--ink);background:#FFFFFF;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--accent)}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{padding:8px 12px;border-radius:10px;border:2px solid var(--ink);font-size:14px;font-weight:700}
+.quest{border:2px solid var(--ink);border-radius:14px;background:var(--soft);padding:20px 22px;display:flex;flex-direction:column;gap:8px;box-shadow:4px 4px 0 var(--ink)}
+.quest-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center}
+.code{padding:1px 8px;border-radius:6px;background:var(--accent);color:var(--accent-text);font-family:'Space Mono',monospace;font-size:12px;font-weight:700}
+.meta{font-size:13px;color:var(--muted)}
+.quest h4{margin:0;font-size:19px}
+.quest p{margin:0;font-size:15px;color:var(--muted)}
+.quest .reward{font-size:14px;font-weight:700;color:var(--ink)}
+.rec{display:flex;flex-direction:column;gap:28px}
+.rec-boxes{display:flex;flex-wrap:wrap;gap:16px}
+.rec-boxes div{flex:1 1 220px;min-width:0;border:2px solid var(--ink);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.proj-row{display:flex;flex-wrap:wrap;gap:12px;padding:12px 0;border-bottom:2px solid var(--ink)}
+.proj-row b{flex:0 0 240px}
+.proj-row span{flex:1 1 260px;min-width:0;color:var(--muted);font-size:15px}
+.contacts{display:flex;flex-wrap:wrap;gap:10px}
+.contacts span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--ink);font-weight:700}
+footer{border-top:3px solid var(--ink);padding:20px 24px;text-align:center;font-size:14px}
+footer a{color:var(--ink);font-weight:700}
+[hidden]{display:none!important}
+body.both .toggle{display:none}
+body.both .panel-title{display:block}
+body.both #rec{display:flex!important}
+body.both #rec-wrap{display:block!important}
+</style>
+</head>
+<body>
+<div class="notice"><b>SAMPLE</b> · 가상의 인물로 만든 AG 포트폴리오 데모입니다</div>
+<header class="hero">
+  <div class="wrap">
+    <div class="who">
+      <span class="avatar" aria-hidden="true">박</span>
+      <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+        <span class="lv mono">LV.1 PLAYER</span>
+        <h1>박서윤</h1>
+        <p>신입 콘텐츠·퍼포먼스 마케터</p>
+      </div>
+    </div>
+    <div class="toggle" role="group" aria-label="보기 모드">
+      <button type="button" data-mode="play" aria-pressed="true">플레이 모드</button>
+      <button type="button" data-mode="rec" aria-pressed="false">30초 모드</button>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <section id="play-wrap">
+    <h2 class="panel-title">플레이 모드 · 방문자용</h2>
+    <div id="play" class="card play">
+      <div class="left">
+        <div style="display:flex;flex-direction:column;gap:14px"><span class="label">STATS</span><div class="stat"><div class="stat-top"><span>콘텐츠 기획</span><span class="mono">80</span></div><div class="bar"><span style="width:80%"></span></div></div><div class="stat"><div class="stat-top"><span>데이터 분석</span><span class="mono">65</span></div><div class="bar"><span style="width:65%"></span></div></div><div class="stat"><div class="stat-top"><span>광고 운영</span><span class="mono">55</span></div><div class="bar"><span style="width:55%"></span></div></div><div class="stat"><div class="stat-top"><span>커뮤니케이션</span><span class="mono">75</span></div><div class="bar"><span style="width:75%"></span></div></div></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><span class="label">ACHIEVEMENTS</span><div class="badges"><span class="badge" style="background:#FF9F5A">마케팅 공모전 장려상</span><span class="badge" style="background:#FFE4F1">구글 애널리틱스 자격</span></div></div>
+      </div>
+      <div class="right"><span class="label">QUEST LOG</span><article class="quest"><div class="quest-top"><span class="code">QUEST 01</span><span class="meta">1년 · 기획과 운영 담당</span></div><h4>학과 인스타그램 계정 운영</h4><p>학과 행사와 졸업생 인터뷰를 주 3회 콘텐츠로 꾸준히 발행했습니다.</p><p class="reward">보상: 운영 1년 동안 팔로워 두 배 성장</p></article><article class="quest"><div class="quest-top"><span class="code">QUEST 02</span><span class="meta">창업 동아리 · 팀 4명</span></div><h4>카페 창업 SNS 광고 실습</h4><p>소액 예산으로 광고 문구와 이미지를 바꿔가며 반응을 비교했습니다.</p><p class="reward">보상: A/B 테스트 3회로 가장 반응 좋은 문구 찾기</p></article><article class="quest"><div class="quest-top"><span class="code">QUEST 03</span><span class="meta">공모전 · 팀 3명 · 기획</span></div><h4>지역 시장 살리기 캠페인</h4><p>대학생과 전통시장을 잇는 캠페인을 기획하고 발표했습니다.</p><p class="reward">보상: 마케팅 공모전 장려상</p></article></div>
+    </div>
+  </section>
+  <section id="rec-wrap">
+    <h2 class="panel-title" style="margin-top:56px">30초 모드 · 채용담당자용</h2>
+    <div id="rec" class="card rec" hidden>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px">
+        <span class="label">30-SECOND SUMMARY</span><span class="code">READ TIME 0:30</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <span style="font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.35">박서윤 · 신입 콘텐츠·퍼포먼스 마케터</span>
+        <span style="font-size:18px;color:var(--muted)">작게 실험하고 숫자로 확인하는 마케터. 계정 운영과 광고 실습으로 기획부터 성과 분석까지 해봤습니다.</span>
+      </div>
+      <div class="rec-boxes"><div style="background:#FF9F5A"><b>핵심 역량</b><span>콘텐츠 기획, SNS 광고 세팅, 성과 분석</span></div><div style="background:#FFF0E5"><b>일하는 방식</b><span>가설을 세우고 작게 실험한 뒤 숫자로 판단</span></div><div style="background:#FFE4F1"><b>자격·수상</b><span>구글 애널리틱스 자격, 마케팅 공모전 장려상</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><b>대표 프로젝트</b><div class="proj-row"><b>학과 인스타그램 계정 운영</b><span>운영 1년 동안 팔로워 두 배 성장</span></div><div class="proj-row"><b>카페 창업 SNS 광고 실습</b><span>A/B 테스트 3회로 가장 반응 좋은 문구 찾기</span></div><div class="proj-row"><b>지역 시장 살리기 캠페인</b><span>마케팅 공모전 장려상</span></div></div>
+      <div class="contacts"><span style="background:var(--accent);color:var(--accent-text)">이력서 PDF (샘플)</span><span>작업물 링크 (샘플)</span><span>이메일 (샘플)</span></div>
+    </div>
+  </section>
+</main>
+<footer>Made by <a href="../">AG Portfolio Studio</a> · 이 페이지는 가상의 인물로 만든 샘플입니다</footer>
+<script>
+if (location.hash === '#both') document.body.classList.add('both');
+var btns = document.querySelectorAll('.toggle button');
+btns.forEach(function (b) {
+  b.addEventListener('click', function () {
+    var rec = b.getAttribute('data-mode') === 'rec';
+    document.getElementById('play').hidden = rec;
+    document.getElementById('rec').hidden = !rec;
+    btns.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+  });
+});
+</script>
+</body>
+</html>
