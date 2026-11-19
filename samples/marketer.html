@@ -75,7 +75,23 @@ footer{border-top:3px solid var(--ink);padding:20px 24px;text-align:center;font-
 .case-links a{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:2px solid var(--ink);border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;background:#FFFFFF}
 .proj-row .case{flex:1 1 100%}
 [hidden]{display:none!important}
-@media print{.toggle,footer,.notice{display:none}.case{display:none}.card{box-shadow:none}#play-wrap{display:none}#rec{display:flex!important}}
+@media print{
+.toggle,footer,.notice{display:none!important}
+.card,.quest{box-shadow:none!important}
+main.wrap{display:flex;flex-direction:column;gap:28px;padding-top:28px;padding-bottom:0}
+#rec{display:flex!important;order:-1;break-after:page}
+#play-wrap{display:block!important}
+.hero .wrap{padding-top:28px;padding-bottom:28px}
+#play-wrap .card{border:none!important;padding:0!important;display:block}
+#play-wrap .left{margin-bottom:24px}
+#play-wrap .right{display:block}
+#play-wrap .quest{margin-top:16px}
+.case-body>div,.stat,.quest-top{break-inside:avoid}
+.case summary{display:none}
+.case{border-top:none;padding-top:0}
+a{text-decoration:none}
+}
+@page{size:A4;margin:12mm}
 
 .hero{background:var(--soft);border-bottom:1px solid #D5D9E0}
 .avatar{border:1px solid #C9CED8;box-shadow:none;border-radius:50%;font-family:'IBM Plex Sans KR',sans-serif;font-weight:700;font-size:38px}
