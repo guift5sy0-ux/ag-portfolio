@@ -116,6 +116,16 @@ section.block{padding:96px 0}
 .proj-row span{flex:1 1 280px;min-width:0;color:var(--muted);font-size:15px}
 .small-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--ink);font-weight:700;text-decoration:none}
 
+.styles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:12px}
+.style-card{display:flex;flex-direction:column;gap:8px;border:3px solid var(--ink);border-radius:16px;background:var(--white);padding:14px 14px 18px;text-decoration:none;color:var(--ink);box-shadow:6px 6px 0 var(--ink);transition:transform .12s, box-shadow .12s}
+.style-card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink);color:var(--ink)}
+.style-card img{width:100%;height:auto;border:2px solid var(--ink);border-radius:10px;display:block}
+.st-name{font-family:var(--display);font-size:28px;line-height:1.2;margin-top:6px}
+.st-desc{font-size:15px;color:var(--muted)}
+.st-link{font-weight:700;color:var(--blue);margin-top:auto}
+.styles-note{margin:0 0 48px;font-size:14px;color:var(--muted)}
+.demo-title{margin:0 0 20px;font-family:var(--display);font-weight:400;font-size:30px}
+
 /* rules */
 .rules{background:var(--blue);color:var(--white);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
 .rules .eyebrow{color:var(--yellow)}
@@ -287,6 +297,29 @@ footer span:last-child{color:#D6D8DE}
       </div>
     </div>
 
+
+    <div class="styles">
+      <a class="style-card" href="samples/developer.html">
+        <img src="samples/thumbs/developer.jpg" alt="게임형 샘플 화면" loading="lazy">
+        <span class="st-name">게임형</span>
+        <span class="st-desc">스탯, 퀘스트, 업적으로 보여주는 눈에 띄는 포트폴리오. 개발, 게임, 스타트업에 추천</span>
+        <span class="st-link">개발자 샘플 보기 →</span>
+      </a>
+      <a class="style-card" href="samples/marketer.html">
+        <img src="samples/thumbs/marketer.jpg" alt="클래식형 샘플 화면" loading="lazy">
+        <span class="st-name">클래식형</span>
+        <span class="st-desc">문서처럼 단정하게. 프로젝트마다 배경부터 결과까지 펼쳐 보여줍니다. 대기업, 공기업, 금융에 추천</span>
+        <span class="st-link">마케터 샘플 보기 →</span>
+      </a>
+      <a class="style-card" href="samples/designer.html">
+        <img src="samples/thumbs/designer.jpg" alt="미니멀형 샘플 화면" loading="lazy">
+        <span class="st-name">미니멀형</span>
+        <span class="st-desc">여백과 명조체로 차분하게. 디자인, 기획, 글쓰기 직군에 추천</span>
+        <span class="st-link">디자이너 샘플 보기 →</span>
+      </a>
+    </div>
+    <p class="styles-note">세 스타일 모두 추가 비용 없이 고르실 수 있고, 제출용 PDF가 함께 나옵니다. 샘플은 가상의 인물로 만든 데모입니다.</p>
+    <h3 class="demo-title">게임형 미리 해보기</h3>
     <div class="card demo">
       <div id="mode-play" class="play">
         <div class="play-left">
